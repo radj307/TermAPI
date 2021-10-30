@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31825.309
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TermAPI", "TermAPI\TermAPI.vcxitems", "{D8AF6A55-3981-4B50-8264-816604A91541}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TermAPI_UnitTests", "TermAPI_UnitTests\TermAPI_UnitTests.vcxproj", "{8A216C03-AC6F-47F7-8196-BB5F4C3B6564}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		TermAPI\TermAPI.vcxitems*{8a216c03-ac6f-47f7-8196-bb5f4c3b6564}*SharedItemsImports = 4
+		TermAPI\TermAPI.vcxitems*{d8af6a55-3981-4b50-8264-816604a91541}*SharedItemsImports = 9
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A216C03-AC6F-47F7-8196-BB5F4C3B6564}.Debug|x64.ActiveCfg = Debug|x64
+		{8A216C03-AC6F-47F7-8196-BB5F4C3B6564}.Debug|x64.Build.0 = Debug|x64
+		{8A216C03-AC6F-47F7-8196-BB5F4C3B6564}.Debug|x86.ActiveCfg = Debug|Win32
+		{8A216C03-AC6F-47F7-8196-BB5F4C3B6564}.Debug|x86.Build.0 = Debug|Win32
+		{8A216C03-AC6F-47F7-8196-BB5F4C3B6564}.Release|x64.ActiveCfg = Release|x64
+		{8A216C03-AC6F-47F7-8196-BB5F4C3B6564}.Release|x64.Build.0 = Release|x64
+		{8A216C03-AC6F-47F7-8196-BB5F4C3B6564}.Release|x86.ActiveCfg = Release|Win32
+		{8A216C03-AC6F-47F7-8196-BB5F4C3B6564}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5B5F3BC8-9664-4228-84B7-2CB83DA7B441}
+	EndGlobalSection
+EndGlobal

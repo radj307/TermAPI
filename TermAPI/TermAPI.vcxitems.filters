@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="sys">
+      <UniqueIdentifier>{cb16823b-d65b-412b-87b6-2be43aa9edce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sys\term">
+      <UniqueIdentifier>{bc972e92-b732-4f79-b8c9-c22dcbc20aeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="color">
+      <UniqueIdentifier>{07156087-6b76-4af9-a12d-85db69f4d98c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TermAPI.hpp">
+      <Filter>sys\term</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TermAPIWin.hpp">
+      <Filter>sys\term</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ColorPalette.hpp">
+      <Filter>color</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ColorLib.hpp">
+      <Filter>color</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TERMAPI.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)sysarch.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)color-values.h">
+      <Filter>color</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)FormatFlag.hpp">
+      <Filter>color</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Layer.hpp">
+      <Filter>color</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)setcolor.hpp">
+      <Filter>color</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)format-functions.hpp">
+      <Filter>color</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)setcolor-functions.hpp">
+      <Filter>color</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ANSIDefs.h" />
+  </ItemGroup>
+</Project>
