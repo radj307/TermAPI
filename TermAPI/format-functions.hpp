@@ -86,7 +86,7 @@ namespace color {
 	 */
 	inline std::ostream& reset(std::ostream& os)
 	{
-		os << SEQ_ESC << "[0" << SEQ_END;
+		os << SEQ_ESC << SEQ_BRACKET << "0" << SEQ_END;
 		return os;
 	}
 

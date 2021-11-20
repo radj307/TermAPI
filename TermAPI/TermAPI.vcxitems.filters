@@ -10,6 +10,15 @@
     <Filter Include="color">
       <UniqueIdentifier>{07156087-6b76-4af9-a12d-85db69f4d98c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="color\basic resources &amp; utils">
+      <UniqueIdentifier>{c9915dd3-a4a9-4d25-b974-2057fd535ab1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="color\color setters &amp; wrappers">
+      <UniqueIdentifier>{9b3e9d81-00f0-40e0-a253-623ecbad2ad1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="color\format &amp; layer">
+      <UniqueIdentifier>{4ec808cc-f400-4e77-8ea8-fe73ad4a4150}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)TermAPI.hpp">
@@ -18,34 +27,53 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)TermAPIWin.hpp">
       <Filter>sys\term</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ColorPalette.hpp">
-      <Filter>color</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ColorLib.hpp">
-      <Filter>color</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)TERMAPI.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sysarch.h">
       <Filter>sys</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)color-values.h">
-      <Filter>color</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TermAPIQuery.hpp">
+      <Filter>sys\term</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ControlEventHandler.hpp">
+      <Filter>sys</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)FormatFlag.hpp">
-      <Filter>color</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Layer.hpp">
-      <Filter>color</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)setcolor.hpp">
-      <Filter>color</Filter>
+      <Filter>color\format &amp; layer</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)format-functions.hpp">
-      <Filter>color</Filter>
+      <Filter>color\format &amp; layer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ANSIDefs.h">
+      <Filter>color\basic resources &amp; utils</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)color-values.h">
+      <Filter>color\basic resources &amp; utils</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ColorLib.hpp">
+      <Filter>color\basic resources &amp; utils</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ColorPalette.hpp">
+      <Filter>color\color setters &amp; wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)setcolor.hpp">
+      <Filter>color\color setters &amp; wrappers</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)setcolor-functions.hpp">
-      <Filter>color</Filter>
+      <Filter>color\color setters &amp; wrappers</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ANSIDefs.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Layer.hpp">
+      <Filter>color\format &amp; layer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TERMAPI.h">
+      <Filter>sys\term</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Sequence.hpp">
+      <Filter>sys\term</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)SequenceDefinitions.hpp">
+      <Filter>sys\term</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)LineCharacter.hpp">
+      <Filter>sys\term</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

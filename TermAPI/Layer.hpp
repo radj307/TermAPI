@@ -13,21 +13,21 @@ namespace color {
 	 * @brief Determines which layer to apply colors to.
 	 */
 	struct Layer {
-		std::string _layer;
+		const std::string _layer;
 
 		/**
 		 * @brief Constexpr Constructor
 		 * @param layer	- 1u == Foreground, 0u == Background
 		 */
-		Layer(std::string layer) : _layer { std::move(layer) } {}
+		constexpr Layer(std::string layer) : _layer{ std::move(layer) } {}
 
-		operator std::string() const { return _layer; }
+		constexpr operator const std::string() const { return _layer; }
 
 		static const Layer FOREGROUND, BACKGROUND;
 
 		friend std::ostream& operator<<(std::ostream& os, const Layer& layer)
 		{
-			os << layer.operator std::string();
+			os << layer.operator const std::string();
 			return os;
 		}
 	};
@@ -38,3 +38,7 @@ namespace color {
 	inline const Layer Layer::BACKGROUND{ SEQ_BACK };
 
 }
+#ifndef COLOR_NO_GLOBALS
+/// @brief Allows specifying the color::Layer object with a shorter syntax. Define "COLOR_NO_GLOBALS" to disable.
+using Layer = color::Layer;
+#endif

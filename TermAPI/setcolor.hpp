@@ -31,7 +31,7 @@ namespace color {
 	struct setcolor {
 	private:
 		std::string _seq; ///< @brief The escape sequence to set colors.
-		FormatFlag _format; ///< @brief Stores information about bold/underline/invert
+		ColorFormat _format; ///< @brief Stores information about bold/underline/invert
 
 	public:
 		/**
@@ -39,12 +39,12 @@ namespace color {
 		 * @param color		 - A number within the terminal's color range.
 		 * @param foreground - When true, the foreground (text) color will be set, else changes the background color.
 		 */
-		setcolor(const short color, const Layer foreground = Layer::FOREGROUND, FormatFlag format = FormatFlag::NONE) : _seq { std::move(makeColorSequence(color, foreground)) }, _format { std::move(format) } {}
+		setcolor(const short color, const Layer foreground = Layer::FOREGROUND, const FormatFlag& format = FormatFlag::NONE) : _seq{ std::move(makeColorSequence(color, foreground)) }, _format{ format } {}
 		/**
 		 * @brief Constructor that accepts an escape sequence string.
 		 * @param color_sequence	- The full ANSI escape sequence, stored in a string variable. This is simply inserted into whichever output stream you target.
 		 */
-		setcolor(std::string color_sequence, FormatFlag format = FormatFlag::NONE) : _seq { std::move(color_sequence) }, _format { std::move(format) } {}
+		setcolor(std::string color_sequence, const FormatFlag& format = FormatFlag::NONE) : _seq{ std::move(color_sequence) }, _format{ format } {}
 
 		// Allow conversion to string
 		operator std::string() const { return _seq; }
@@ -53,22 +53,22 @@ namespace color {
 		 * @brief Retrieve the current format flags.
 		 * @returns FormatFlag
 		 */
-		virtual FormatFlag getFormat() const { return _format; }
+		virtual ColorFormat getFormat() const { return _format; }
 		/**
 		 * @brief Set the format flag to a new value.
 		 * @param newFormat		- Replaces the current formatting flags.
 		 * @returns FormatFlag	- Previous format flags
 		 */
-		virtual FormatFlag setFormat(const FormatFlag& newFormat) { const auto copy { _format }; _format = newFormat; return copy; }
-		virtual FormatFlag addFormat(const FormatFlag& modFormat)
+		virtual ColorFormat setFormat(const FormatFlag& newFormat) { const auto copy{ _format }; _format = newFormat; return copy; }
+		virtual ColorFormat addFormat(const FormatFlag& modFormat)
 		{
-			const auto copy { _format };
+			const auto copy{ _format };
 			_format |= modFormat;
 			return copy;
 		}
-		virtual FormatFlag remFormat(const FormatFlag& modFormat)
+		virtual ColorFormat removeFormat(const FormatFlag& modFormat)
 		{
-			const auto copy { _format };
+			const auto copy{ _format };
 			_format &= modFormat;
 			return copy;
 		}
@@ -87,13 +87,19 @@ namespace color {
 		friend std::ostream& operator<<(std::ostream& os, const setcolor& obj)
 		{
 			os << obj._seq;
-			if ( obj._format != FormatFlag::NONE ) {
-				if ( obj._format.has_flag(FormatFlag::BOLD) )
+			if (obj._format != FormatFlag::NONE) {
+				if (obj._format == FormatFlag::BOLD)
 					os << bold;
-				if ( obj._format.has_flag(FormatFlag::UNDERLINE) )
+				if (obj._format == FormatFlag::RESET_BOLD)
+					os << reset_bold;
+				if (obj._format == FormatFlag::UNDERLINE)
 					os << underline;
-				if ( obj._format.has_flag(FormatFlag::INVERT) )
+				if (obj._format == FormatFlag::RESET_UNDERLINE)
+					os << reset_underline;
+				if (obj._format == FormatFlag::INVERT)
 					os << invert;
+				if (obj._format == FormatFlag::RESET_INVERT)
+					os << reset_invert;
 			}
 			return os;
 		}
