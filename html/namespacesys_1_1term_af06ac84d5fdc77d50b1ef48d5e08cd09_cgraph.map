@@ -1,0 +1,4 @@
+<map id="sys::term::DeleteChar" name="sys::term::DeleteChar">
+<area shape="rect" id="node1" title="Deletes characters at the current cursor position, shifting any existing text from the right towards ..." alt="" coords="5,5,155,32"/>
+<area shape="rect" id="node2" href="$namespace_a_n_s_i.html#a977251e5c42aaa7c2d2cdbf9cbc7e29d" title=" " alt="" coords="203,5,357,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="sys::term::DeleteLine" name="sys::term::DeleteLine">
+<area shape="rect" id="node1" title="Deletes lines from the screen buffer, starting with the row the cursor is on, shifting any lines belo..." alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node2" href="$namespace_a_n_s_i.html#a977251e5c42aaa7c2d2cdbf9cbc7e29d" title=" " alt="" coords="200,5,355,32"/>
+</map>

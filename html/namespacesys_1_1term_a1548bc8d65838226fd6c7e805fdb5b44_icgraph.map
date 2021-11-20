@@ -1,0 +1,7 @@
+<map id="sys::term::setCursorVisible" name="sys::term::setCursorVisible">
+<area shape="rect" id="node1" title="Set whether the cursor is visible or not." alt="" coords="417,31,597,57"/>
+<area shape="rect" id="node2" href="$namespacesys_1_1term.html#a9860c3b4101735f5d5373c4e18c1692b" title="Hides the cursor." alt="" coords="217,5,367,32"/>
+<area shape="rect" id="node4" href="$namespacesys_1_1term.html#a4c4c3ca6f258df5aa3759db0d8435a57" title="Shows the cursor." alt="" coords="215,56,369,83"/>
+<area shape="rect" id="node3" href="$structsys_1_1term_1_1_cursor.html#a436117d16797ef106a80324878334425" title=" " alt="" coords="9,5,163,32"/>
+<area shape="rect" id="node5" href="$structsys_1_1term_1_1_cursor.html#aee60485bd38da3ff4d608138ddf46943" title=" " alt="" coords="5,56,167,83"/>
+</map>

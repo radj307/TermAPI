@@ -1,0 +1,4 @@
+<map id="sys::term::EraseChar" name="sys::term::EraseChar">
+<area shape="rect" id="node1" title="Erases a given number of characters starting at the current cursor position by overwriting them with ..." alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node2" href="$namespace_a_n_s_i.html#a977251e5c42aaa7c2d2cdbf9cbc7e29d" title=" " alt="" coords="200,5,355,32"/>
+</map>
