@@ -22,8 +22,10 @@
 #include <iomanip>
 #include <sstream>
 
+#ifndef TERMAPI_ENABLE_OLD_FUNCTIONS
+#include <SequenceDefinitions.hpp>
+#else
 namespace sys::term {
-#ifdef TERMAPI_ENABLE_OLD_FUNCTIONS
 #pragma region CursorPositioning
 	/// @brief Moves the cursor up by _n_ character positions.
 	inline void cursorUp(unsigned n = 1u)
@@ -351,8 +353,9 @@ namespace sys::term {
 	{
 		std::cout << color::reset;
 	}
+}
 #endif
-
+namespace sys::term {
 	struct TermMessage {
 	protected:
 		std::string _message;

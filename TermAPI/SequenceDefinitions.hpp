@@ -276,7 +276,7 @@ namespace sys::term {
 	 * @param mode	All possible modes: https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting
 	 * @returns		Sequence
 	 */
-	template<typename T> requires std::integral<T>
+	template<std::integral T>
 	[[nodiscard]] inline Sequence SetGraphicsRendition(const T& mode)
 	{
 		return Sequence(make_sequence(ESC, CSI, mode, 'm'));
@@ -476,6 +476,10 @@ namespace sys::term {
 #pragma endregion AlternateScreenBuffer
 
 #pragma region Wrappers_ostream
+	/* Cursor */
+	[[nodiscard]] inline std::ostream& HideCursor(std::ostream& os) { return os << HideCursor(); }
+	[[nodiscard]] inline std::ostream& ShowCursor(std::ostream& os) { return os << ShowCursor(); }
+
 	/* Viewport */
 
 	/* Tabs */

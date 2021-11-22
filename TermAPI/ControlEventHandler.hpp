@@ -8,9 +8,14 @@
 #include <functional>
 #include <array>
 #ifdef OS_WIN
-#include <Windows.h>
+#ifndef _WINDOWS_
+#include <Windows.hpp>
+#endif
 
 namespace sys {
+#ifdef WINDOWS_HPP
+	using namespace win;
+#endif
 	/**
 	 * @enum Event
 	 * @brief WIN32 API Control Event types that can be emitted at runtime.
