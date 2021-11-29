@@ -9,6 +9,7 @@ var namespace_a_n_s_i =
     [ "CURSOR_VISIBLE", "namespace_a_n_s_i.html#aa9009661631cfe31ae37e86bf1bc9e0c", null ],
     [ "DISABLE", "namespace_a_n_s_i.html#a02946f46d67d032c9c38bef1b1be0528", null ],
     [ "ENABLE", "namespace_a_n_s_i.html#a132d88e8d26b6264915dd3c1e97456ce", null ],
+    [ "END", "namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7", null ],
     [ "ESC", "namespace_a_n_s_i.html#a44c3e4e788ab40a7fac378f198fe5053", null ],
     [ "FORE", "namespace_a_n_s_i.html#a0d79d94677c7f3c5c63b3f2e332497a0", null ],
     [ "OSC", "namespace_a_n_s_i.html#a173a5453ae13d3ea7dc4ecfaf437c0a8", null ],

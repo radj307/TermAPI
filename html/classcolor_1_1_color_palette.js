@@ -12,6 +12,7 @@ var classcolor_1_1_color_palette =
     [ "operator=", "classcolor_1_1_color_palette.html#a1c5cf4fabe5a15d9e89694a4c6e232a3", null ],
     [ "operator=", "classcolor_1_1_color_palette.html#afcdee5ef0c2dd91726b82ec5805a1157", null ],
     [ "reset", "classcolor_1_1_color_palette.html#a01a544407750d5bb8f22df1a213ad9f1", null ],
+    [ "reset", "classcolor_1_1_color_palette.html#a32108c63ea394b0a23f852d5ee7fbd38", null ],
     [ "set", "classcolor_1_1_color_palette.html#a1a3f7ebbeb63d6e80920594db85f3cb9", null ],
     [ "setActive", "classcolor_1_1_color_palette.html#a51eedebade04a1fec397bb99f127555b", null ],
     [ "_isActive", "classcolor_1_1_color_palette.html#ac82c5b2e101a59d376854d534895c1f9", null ],

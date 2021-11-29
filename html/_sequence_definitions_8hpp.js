@@ -1,6 +1,7 @@
 var _sequence_definitions_8hpp =
 [
     [ "Cursor", "structsys_1_1term_1_1_cursor.html", "structsys_1_1term_1_1_cursor" ],
+    [ "SEQUENCE_DEFINITIONS", "_sequence_definitions_8hpp.html#ac6b07d3395b57125302c32e0614e03ac", null ],
     [ "CharacterSet", "_sequence_definitions_8hpp.html#a1a1e82b48b124efd4609b891a6afa1c1", [
       [ "ASCII", "_sequence_definitions_8hpp.html#a1a1e82b48b124efd4609b891a6afa1c1ad2cd8253361a9c732d21ca1d336599cc", null ],
       [ "DEC_LINE_DRAWING", "_sequence_definitions_8hpp.html#a1a1e82b48b124efd4609b891a6afa1c1a8bd65459ddef36c122069ea112f2ed67", null ]
@@ -44,6 +45,7 @@ var _sequence_definitions_8hpp =
     [ "EraseInDisplay", "_sequence_definitions_8hpp.html#a3df7529850f105646003846b893cf920", null ],
     [ "EraseInLine", "_sequence_definitions_8hpp.html#a08be6d57aeb571f3654eb7a95490984d", null ],
     [ "HideCursor", "_sequence_definitions_8hpp.html#a9860c3b4101735f5d5373c4e18c1692b", null ],
+    [ "HideCursor", "_sequence_definitions_8hpp.html#a7f4499a298d74654dff13b94f871c177", null ],
     [ "InsertChar", "_sequence_definitions_8hpp.html#aea032bd32093487fbbc66819c5f4fd05", null ],
     [ "InsertLine", "_sequence_definitions_8hpp.html#a6d88ca1228d59af360716a87f9d429c4", null ],
     [ "LoadCursor", "_sequence_definitions_8hpp.html#afa63d679a59a416433fa2802bc50e2e2", null ],
@@ -60,8 +62,7 @@ var _sequence_definitions_8hpp =
     [ "setCursorPosition", "_sequence_definitions_8hpp.html#ab4e84e4b833e01a8a31e474f69ebffe8", null ],
     [ "setCursorPosition", "_sequence_definitions_8hpp.html#ac06e935eb8bbd977e0523094c9e907ab", null ],
     [ "setCursorVisible", "_sequence_definitions_8hpp.html#a1548bc8d65838226fd6c7e805fdb5b44", null ],
-    [ "SetGraphicsRendition", "_sequence_definitions_8hpp.html#a8245d28a32722c19d37e8b2d46114407", null ],
-    [ "SetGraphicsRendition", "_sequence_definitions_8hpp.html#a446223f3b1117a593776d5c5e612acbb", null ],
+    [ "SetGraphicsRendition", "_sequence_definitions_8hpp.html#a88023359594ad2b4fd141c438ae262ff", null ],
     [ "setKeyMode", "_sequence_definitions_8hpp.html#ae3c10a85f713b54eca7892932873fce3", null ],
     [ "setLineDrawingMode", "_sequence_definitions_8hpp.html#a0d97e75f623a8f4bdf6edd189fb541e8", null ],
     [ "setLineDrawingMode", "_sequence_definitions_8hpp.html#a23f07b7cbd822bc55aa7f4daff5c2eb0", null ],
@@ -70,7 +71,11 @@ var _sequence_definitions_8hpp =
     [ "setScreenBuffer", "_sequence_definitions_8hpp.html#ac8eba595bee4d7b95c475024ede55fb2", null ],
     [ "SetTabStop", "_sequence_definitions_8hpp.html#ae58469eae65fb1b1f890aa7d910d00e1", null ],
     [ "SetTabStop", "_sequence_definitions_8hpp.html#a41cf50dcc8dad6c88d0fd2506b5ab6b5", null ],
+    [ "setWindowTitle", "_sequence_definitions_8hpp.html#ac74c1548c9943cbb24b8001b3cadba99", null ],
     [ "ShowCursor", "_sequence_definitions_8hpp.html#a4c4c3ca6f258df5aa3759db0d8435a57", null ],
+    [ "ShowCursor", "_sequence_definitions_8hpp.html#a5c9650b861d5cf804d3b35cb3fbc89f7", null ],
+    [ "SoftReset", "_sequence_definitions_8hpp.html#a3a91c586766ae125ce8d6c054e76d608", null ],
+    [ "SoftReset", "_sequence_definitions_8hpp.html#a8596e06ba6882ca8aa86547adc95fcf2", null ],
     [ "unsetLineDrawingMode", "_sequence_definitions_8hpp.html#a6c84bc8e31e95cb1df8448cd1a872752", null ],
     [ "unsetLineDrawingMode", "_sequence_definitions_8hpp.html#ad459603ed520b46905af9eed84e349db", null ],
     [ "EraseInType", "_sequence_definitions_8hpp.html#adc395017ce93018ab0cd5ff26e12cf1b", null ]

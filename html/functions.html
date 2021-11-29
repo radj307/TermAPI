@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="termcolor.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">TermAPI
-   &#160;<span id="projectnumber">2.1.0</span>
+   &#160;<span id="projectnumber">3.0.0</span>
    </div>
    <div id="projectbrief">C++20 ANSI Escape Sequence Library</div>
   </td>
@@ -93,8 +93,8 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>_ch
 : <a class="el" href="structsys_1_1term_1_1_line_character.html#a67fd6510ec258351d46b3fe36e5a2cc3">sys::term::LineCharacter</a>
 </li>
-<li>_color
-: <a class="el" href="structsys_1_1term_1_1_term_message.html#af87cabbef65a01864256738de106226b">sys::term::TermMessage</a>
+<li>_content
+: <a class="el" href="structsys_1_1term_1_1make__message.html#af181de192fd101edfd63ee63d554531e">sys::term::make_message</a>
 </li>
 <li>_fmt
 : <a class="el" href="structcolor_1_1_color_format.html#a598de371878345116d0c3d3177d00873">color::ColorFormat</a>
@@ -103,24 +103,25 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="structcolor_1_1_format_flag.html#aa67cdba4ac8fdfaaf342d2117ec089d9">color::FormatFlag</a>
 , <a class="el" href="structcolor_1_1setcolor.html#a1b9e12d3543f88b8d734fca85eb35df8">color::setcolor</a>
 </li>
-<li>_indent
-: <a class="el" href="structsys_1_1term_1_1_term_message.html#a87701a950cf34ad4feaff313b2fa81f0">sys::term::TermMessage</a>
-</li>
 <li>_isActive
 : <a class="el" href="classcolor_1_1_color_palette.html#ac82c5b2e101a59d376854d534895c1f9">color::ColorPalette&lt; KeyType &gt;</a>
 </li>
 <li>_layer
 : <a class="el" href="structcolor_1_1_layer.html#afd2fea3fff4b156e0197f30752fa8fcf">color::Layer</a>
 </li>
-<li>_message
-: <a class="el" href="structsys_1_1term_1_1_term_message.html#a11b2d924b0178b0b0ae0774b40559ab7">sys::term::TermMessage</a>
+<li>_max_indent
+: <a class="el" href="structsys_1_1term_1_1make__message.html#ac1b745f5507c9c3b296bf2ac34678bbf">sys::term::make_message</a>
 </li>
 <li>_palette
 : <a class="el" href="classcolor_1_1_color_palette.html#a35735eeec3876204ad7039f223ed7fe0">color::ColorPalette&lt; KeyType &gt;</a>
+, <a class="el" href="structcolor_1_1file_1_1_color_file.html#a27f17bd7b176bf941077038e69436dcf">color::file::ColorFile&lt; KeyType &gt;</a>
 </li>
 <li>_seq
 : <a class="el" href="struct_a_n_s_i_1_1_sequence.html#a86844cde0d6fea25bd777e2dc63349d0">ANSI::Sequence</a>
 , <a class="el" href="structcolor_1_1setcolor.html#aab23266a13207a26c689a300ef987292">color::setcolor</a>
+</li>
+<li>_type
+: <a class="el" href="structsys_1_1term_1_1make__message.html#aa56a5fe6ba3d7ba8270a28d29a044e0b">sys::term::make_message</a>
 </li>
 </ul>
 
@@ -146,6 +147,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
+<li>ColorFile()
+: <a class="el" href="structcolor_1_1file_1_1_color_file.html#aa65dc42ef67487e27b2fcc074e3bd79b">color::file::ColorFile&lt; KeyType &gt;</a>
+</li>
 <li>ColorFormat()
 : <a class="el" href="structcolor_1_1_color_format.html#a84af8569e16194b5e5622229935554c4">color::ColorFormat</a>
 </li>
@@ -190,6 +194,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>getFormat()
 : <a class="el" href="structcolor_1_1setcolor.html#a128dc252354c3e8a3fd9d51164504553">color::setcolor</a>
+</li>
+<li>getNext()
+: <a class="el" href="structcolor_1_1file_1_1token_1_1_sequence_tokenizer.html#a3ebfce79eb09e50b8d4db2f45be13271">color::file::token::SequenceTokenizer</a>
 </li>
 <li>getPos()
 : <a class="el" href="structsys_1_1term_1_1_cursor.html#a17ee1a11ba45812bfee4c2c1aed75e9b">sys::term::Cursor</a>
@@ -241,6 +248,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_l"></a>- l -</h3><ul>
+<li>lastPos
+: <a class="el" href="structcolor_1_1file_1_1token_1_1_sequence_tokenizer.html#a5fd99ff5fb983f4752a8d3b8b061c326">color::file::token::SequenceTokenizer</a>
+</li>
 <li>Layer()
 : <a class="el" href="structcolor_1_1_layer.html#a699a1d76a89a7a88470b11ebb8ae83c9">color::Layer</a>
 </li>
@@ -255,6 +265,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>load()
 : <a class="el" href="structsys_1_1term_1_1_cursor.html#ae23e59cd9629f74f1a73e42ef15fb567">sys::term::Cursor</a>
+</li>
+</ul>
+
+
+<h3><a id="index_m"></a>- m -</h3><ul>
+<li>make_message()
+: <a class="el" href="structsys_1_1term_1_1make__message.html#aacb9787664d091e4f8f2ff9e4572df15">sys::term::make_message</a>
 </li>
 </ul>
 
@@ -301,10 +318,11 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>operator&lt;&lt;
 : <a class="el" href="struct_a_n_s_i_1_1_sequence.html#a0bcba01859e68239260117ddfcd17194">ANSI::Sequence</a>
+, <a class="el" href="structcolor_1_1file_1_1_color_file.html#ac082466df48556ac4ddbd78d8d70a984">color::file::ColorFile&lt; KeyType &gt;</a>
 , <a class="el" href="structcolor_1_1_layer.html#abacd8507e5f3776c532cb3781db72c39">color::Layer</a>
 , <a class="el" href="structcolor_1_1setcolor.html#a3486a0e5b6a50fbeee22a025c4a721cb">color::setcolor</a>
 , <a class="el" href="structsys_1_1term_1_1_line_character.html#a881fcc74dbc732e9d772c6a00875517e">sys::term::LineCharacter</a>
-, <a class="el" href="structsys_1_1term_1_1_term_message.html#a75e8153774e9652951695b6808e4ac22">sys::term::TermMessage</a>
+, <a class="el" href="structsys_1_1term_1_1make__message.html#ad92365fb9fb04507c0e0b887b3a67c25">sys::term::make_message</a>
 </li>
 <li>operator=()
 : <a class="el" href="classcolor_1_1_color_palette.html#a1c5cf4fabe5a15d9e89694a4c6e232a3">color::ColorPalette&lt; KeyType &gt;</a>
@@ -369,6 +387,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>Sequence()
 : <a class="el" href="struct_a_n_s_i_1_1_sequence.html#a9b4c8107ecf315a661eea63d91c03809">ANSI::Sequence</a>
 </li>
+<li>SequenceTokenizer()
+: <a class="el" href="structcolor_1_1file_1_1token_1_1_sequence_tokenizer.html#a3b927d7a2d527ef8294776b00afd6929">color::file::token::SequenceTokenizer</a>
+</li>
 <li>set()
 : <a class="el" href="classcolor_1_1_color_palette.html#a1a3f7ebbeb63d6e80920594db85f3cb9">color::ColorPalette&lt; KeyType &gt;</a>
 </li>
@@ -378,7 +399,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>setcolor()
 : <a class="el" href="structcolor_1_1background_1_1setcolor.html#ad3e2873995adeeedee9799b4622eea71">color::background::setcolor</a>
 , <a class="el" href="structcolor_1_1foreground_1_1setcolor.html#ace4364c4f07e658bd6bdfde44fc3c928">color::foreground::setcolor</a>
-, <a class="el" href="structcolor_1_1setcolor.html#ab70ce34d20daf16022e9f68cb690933b">color::setcolor</a>
+, <a class="el" href="structcolor_1_1setcolor.html#abef336a7234867ac4a0cae61d0667325">color::setcolor</a>
 </li>
 <li>setFormat()
 : <a class="el" href="structcolor_1_1setcolor.html#a7097486a9e241a018af31c734fe56f7a">color::setcolor</a>
@@ -388,6 +409,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>show()
 : <a class="el" href="structsys_1_1term_1_1_cursor.html#aee60485bd38da3ff4d608138ddf46943">sys::term::Cursor</a>
+</li>
+<li>ss
+: <a class="el" href="structcolor_1_1file_1_1token_1_1_sequence_tokenizer.html#a3d2f38f4a723186bba19bd7994c3b08e">color::file::token::SequenceTokenizer</a>
 </li>
 <li>start_blinking()
 : <a class="el" href="structsys_1_1term_1_1_cursor.html#ade1302ce0b237c05276f7baab17f387e">sys::term::Cursor</a>
@@ -399,11 +423,11 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
-<li>TermMessage()
-: <a class="el" href="structsys_1_1term_1_1_term_message.html#aab5f074b7b6bcb0bdf50ad64eadb23f8">sys::term::TermMessage</a>
-</li>
 <li>textcolor()
 : <a class="el" href="structcolor_1_1textcolor.html#aaa0a73a239656d1f80168184b266dc2e">color::textcolor</a>
+</li>
+<li>Token()
+: <a class="el" href="structcolor_1_1file_1_1token_1_1_token.html#a0feca7e33b2b869b7334668296c995e9">color::file::token::Token</a>
 </li>
 </ul>
 

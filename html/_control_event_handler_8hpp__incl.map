@@ -1,6 +1,8 @@
 <map id="X:/_Workspace/_repo/TermAPI/TermAPI/ControlEventHandler.hpp" name="X:/_Workspace/_repo/TermAPI/TermAPI/ControlEventHandler.hpp">
-<area shape="rect" id="node1" title="Contains functions &amp; methods for handling WIN32 Control Events, such as SIGINT (CTRL + C) &amp; SIGBREAK ..." alt="" coords="44,5,251,61"/>
+<area shape="rect" id="node1" title="Contains functions &amp; methods for handling WIN32 Control Events, such as SIGINT (CTRL + C) &amp; SIGBREAK ..." alt="" coords="132,5,339,61"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,109,84,136"/>
 <area shape="rect" id="node3" title=" " alt="" coords="109,109,186,136"/>
 <area shape="rect" id="node4" title=" " alt="" coords="210,109,261,136"/>
+<area shape="rect" id="node5" title=" " alt="" coords="285,109,348,136"/>
+<area shape="rect" id="node6" title=" " alt="" coords="373,109,439,136"/>
 </map>

@@ -1,6 +1,6 @@
 <map id="sys::term::_internal::get_query_response" name="sys::term::_internal::get_query_response">
 <area shape="rect" id="node1" title="Receive a query response from STDIN, and return it as a string. &#160;&#160;It is ___highly discouraged___ to c..." alt="" coords="429,31,576,72"/>
-<area shape="rect" id="node2" href="$namespacesys_1_1term.html#a4bda1565edafc07baa03d503792d15e6" title="Retrieve the current position of the cursor, measured in characters of the screen buffer." alt="" coords="189,13,377,39"/>
+<area shape="rect" id="node2" href="$namespacesys_1_1term.html#a79aa414e3b82bd9738dd8c6d52aa320f" title="Retrieve the current position of the cursor, measured in characters of the screen buffer." alt="" coords="189,13,377,39"/>
 <area shape="rect" id="node4" href="$namespacesys_1_1term.html#a77930a4d97877c68026bd2aba18c6313" title=" " alt="" coords="184,63,381,90"/>
 <area shape="rect" id="node3" href="$structsys_1_1term_1_1_cursor.html#a17ee1a11ba45812bfee4c2c1aed75e9b" title=" " alt="" coords="5,5,136,47"/>
 </map>

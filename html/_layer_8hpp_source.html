@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="termcolor.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">TermAPI
-   &#160;<span id="projectnumber">2.1.0</span>
+   &#160;<span id="projectnumber">3.0.0</span>
    </div>
    <div id="projectbrief">C++20 ANSI Escape Sequence Library</div>
   </td>
@@ -113,14 +113,15 @@ $(document).ready(function(){initNavTree('_layer_8hpp_source.html',''); initResi
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    };</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="structcolor_1_1_layer.html">Layer</a> <a class="code" href="structcolor_1_1_layer.html#a24bb448623eb5018aecfb1638153d772">Layer::FOREGROUND</a>{ <a class="code" href="dummy.html">SEQ_FORE</a> };</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="structcolor_1_1_layer.html">Layer</a> <a class="code" href="structcolor_1_1_layer.html#ae98872f4aae9cd11d17ae90734d19fa1">Layer::BACKGROUND</a>{ <a class="code" href="dummy.html">SEQ_BACK</a> };</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="structcolor_1_1_layer.html">Layer</a> <a class="code" href="structcolor_1_1_layer.html#a24bb448623eb5018aecfb1638153d772">Layer::FOREGROUND</a>{ <a class="code" href="namespace_a_n_s_i.html#a0d79d94677c7f3c5c63b3f2e332497a0">ANSI::FORE</a> };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="structcolor_1_1_layer.html">Layer</a> <a class="code" href="structcolor_1_1_layer.html#ae98872f4aae9cd11d17ae90734d19fa1">Layer::BACKGROUND</a>{ <a class="code" href="namespace_a_n_s_i.html#a90f20220a21206828ab597808d20fd55">ANSI::BACK</a> };</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifndef COLOR_NO_GLOBALS</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">using</span> <a class="code" href="structcolor_1_1_layer.html">Layer</a> = <a class="code" href="structcolor_1_1_layer.html">color::Layer</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="adummy_html"><div class="ttname"><a href="dummy.html">SEQ_FORE</a></div><div class="ttdeci">#define SEQ_FORE</div><div class="ttdoc">Foreground set color sequence.</div><div class="ttdef"><b>Definition:</b> <a href="_a_n_s_i_defs_8h.html_source#l00038">ANSIDefs.h:38</a></div></div>
+<div class="ttc" id="anamespace_a_n_s_i_html_a0d79d94677c7f3c5c63b3f2e332497a0"><div class="ttname"><a href="namespace_a_n_s_i.html#a0d79d94677c7f3c5c63b3f2e332497a0">ANSI::FORE</a></div><div class="ttdeci">constexpr const auto FORE</div><div class="ttdoc">Defines a color sequence as applying to the foreground (text) layer.</div><div class="ttdef"><b>Definition:</b> <a href="_a_n_s_i_defs_8h.html_source#l00019">ANSIDefs.h:19</a></div></div>
+<div class="ttc" id="anamespace_a_n_s_i_html_a90f20220a21206828ab597808d20fd55"><div class="ttname"><a href="namespace_a_n_s_i.html#a90f20220a21206828ab597808d20fd55">ANSI::BACK</a></div><div class="ttdeci">constexpr const auto BACK</div><div class="ttdoc">Defines a color sequence as applying to the background layer.</div><div class="ttdef"><b>Definition:</b> <a href="_a_n_s_i_defs_8h.html_source#l00021">ANSIDefs.h:21</a></div></div>
 <div class="ttc" id="anamespacecolor_html"><div class="ttname"><a href="namespacecolor.html">color</a></div><div class="ttdoc">Contains various methods, functions, and functors for setting the color of text/backgrounds in termin...</div></div>
 <div class="ttc" id="astructcolor_1_1_layer_html"><div class="ttname"><a href="structcolor_1_1_layer.html">color::Layer</a></div><div class="ttdoc">Determines which layer to apply colors to.</div><div class="ttdef"><b>Definition:</b> <a href="_layer_8hpp.html_source#l00015">Layer.hpp:15</a></div></div>
 <div class="ttc" id="astructcolor_1_1_layer_html_a24bb448623eb5018aecfb1638153d772"><div class="ttname"><a href="structcolor_1_1_layer.html#a24bb448623eb5018aecfb1638153d772">color::Layer::FOREGROUND</a></div><div class="ttdeci">static const Layer FOREGROUND</div><div class="ttdoc">Foreground/text color layer.</div><div class="ttdef"><b>Definition:</b> <a href="_layer_8hpp.html_source#l00026">Layer.hpp:26</a></div></div>

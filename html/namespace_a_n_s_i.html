@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="termcolor.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">TermAPI
-   &#160;<span id="projectnumber">2.1.0</span>
+   &#160;<span id="projectnumber">3.0.0</span>
    </div>
    <div id="projectbrief">C++20 ANSI Escape Sequence Library</div>
   </td>
@@ -113,32 +113,41 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a44c3e4e788ab40a7fac378f198fe5053"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a44c3e4e788ab40a7fac378f198fe5053">ESC</a> { '\033' }</td></tr>
+<tr class="memitem:a44c3e4e788ab40a7fac378f198fe5053"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a44c3e4e788ab40a7fac378f198fe5053">ESC</a> { '\x1b' }</td></tr>
 <tr class="memdesc:a44c3e4e788ab40a7fac378f198fe5053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escape Character. Required at the beginning of all escape sequences.  <a href="namespace_a_n_s_i.html#a44c3e4e788ab40a7fac378f198fe5053">More...</a><br /></td></tr>
 <tr class="separator:a44c3e4e788ab40a7fac378f198fe5053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2944a74fc1b5c3e7b82539fd0a202a66"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">CSI</a> { '\133' }</td></tr>
+<tr class="memitem:a2944a74fc1b5c3e7b82539fd0a202a66"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">CSI</a> { '[' }</td></tr>
 <tr class="memdesc:a2944a74fc1b5c3e7b82539fd0a202a66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control <a class="el" href="struct_a_n_s_i_1_1_sequence.html" title="Virtual functor that exposes multiple methods of executing an ANSI escape sequence....">Sequence</a> Introducer. Only valid when preceeded by ESC.  <a href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">More...</a><br /></td></tr>
 <tr class="separator:a2944a74fc1b5c3e7b82539fd0a202a66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a173a5453ae13d3ea7dc4ecfaf437c0a8"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a173a5453ae13d3ea7dc4ecfaf437c0a8">OSC</a> { '\133' }</td></tr>
+<tr class="memitem:a173a5453ae13d3ea7dc4ecfaf437c0a8"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a173a5453ae13d3ea7dc4ecfaf437c0a8">OSC</a> { ']' }</td></tr>
 <tr class="memdesc:a173a5453ae13d3ea7dc4ecfaf437c0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operating System Command. Only valid when preceeded by ESC.  <a href="namespace_a_n_s_i.html#a173a5453ae13d3ea7dc4ecfaf437c0a8">More...</a><br /></td></tr>
 <tr class="separator:a173a5453ae13d3ea7dc4ecfaf437c0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d79d94677c7f3c5c63b3f2e332497a0"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a0d79d94677c7f3c5c63b3f2e332497a0">FORE</a> { &quot;38;5&quot; }</td></tr>
-<tr class="memdesc:a0d79d94677c7f3c5c63b3f2e332497a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Foreground color.  <a href="namespace_a_n_s_i.html#a0d79d94677c7f3c5c63b3f2e332497a0">More...</a><br /></td></tr>
+<tr class="memdesc:a0d79d94677c7f3c5c63b3f2e332497a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a color sequence as applying to the foreground (text) layer.  <a href="namespace_a_n_s_i.html#a0d79d94677c7f3c5c63b3f2e332497a0">More...</a><br /></td></tr>
 <tr class="separator:a0d79d94677c7f3c5c63b3f2e332497a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90f20220a21206828ab597808d20fd55"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a90f20220a21206828ab597808d20fd55">BACK</a> { &quot;48;5&quot; }</td></tr>
-<tr class="memdesc:a90f20220a21206828ab597808d20fd55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Background color.  <a href="namespace_a_n_s_i.html#a90f20220a21206828ab597808d20fd55">More...</a><br /></td></tr>
+<tr class="memdesc:a90f20220a21206828ab597808d20fd55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a color sequence as applying to the background layer.  <a href="namespace_a_n_s_i.html#a90f20220a21206828ab597808d20fd55">More...</a><br /></td></tr>
 <tr class="separator:a90f20220a21206828ab597808d20fd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a760aa24c8cf8bfed2b1d0a2d1d67edd7"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">END</a> { &quot;m&quot; }</td></tr>
+<tr class="memdesc:a760aa24c8cf8bfed2b1d0a2d1d67edd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Color sequence end character.  <a href="namespace_a_n_s_i.html#a760aa24c8cf8bfed2b1d0a2d1d67edd7">More...</a><br /></td></tr>
+<tr class="separator:a760aa24c8cf8bfed2b1d0a2d1d67edd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a132d88e8d26b6264915dd3c1e97456ce"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a132d88e8d26b6264915dd3c1e97456ce">ENABLE</a> { 'h' }</td></tr>
+<tr class="memdesc:a132d88e8d26b6264915dd3c1e97456ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character used by some toggleable escape sequences to define that it should be enabled.  <a href="namespace_a_n_s_i.html#a132d88e8d26b6264915dd3c1e97456ce">More...</a><br /></td></tr>
 <tr class="separator:a132d88e8d26b6264915dd3c1e97456ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02946f46d67d032c9c38bef1b1be0528"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a02946f46d67d032c9c38bef1b1be0528">DISABLE</a> { 'l' }</td></tr>
+<tr class="memdesc:a02946f46d67d032c9c38bef1b1be0528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character used by some toggleable escape sequences to define that it should be disabled.  <a href="namespace_a_n_s_i.html#a02946f46d67d032c9c38bef1b1be0528">More...</a><br /></td></tr>
 <tr class="separator:a02946f46d67d032c9c38bef1b1be0528"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9009661631cfe31ae37e86bf1bc9e0c"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#aa9009661631cfe31ae37e86bf1bc9e0c">CURSOR_VISIBLE</a> { &quot;?25&quot; }</td></tr>
+<tr class="memdesc:aa9009661631cfe31ae37e86bf1bc9e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Midsequence used by the cursor visibility sequence.  <a href="namespace_a_n_s_i.html#aa9009661631cfe31ae37e86bf1bc9e0c">More...</a><br /></td></tr>
 <tr class="separator:aa9009661631cfe31ae37e86bf1bc9e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af22969a59eed0d19ea2f709ec1d86534"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#af22969a59eed0d19ea2f709ec1d86534">CURSOR_BLINK</a> { &quot;?12&quot; }</td></tr>
+<tr class="memdesc:af22969a59eed0d19ea2f709ec1d86534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Midsequence used by the cursor blinking sequence.  <a href="namespace_a_n_s_i.html#af22969a59eed0d19ea2f709ec1d86534">More...</a><br /></td></tr>
 <tr class="separator:af22969a59eed0d19ea2f709ec1d86534"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac975ec98657ebd2496942158febd9926"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#ac975ec98657ebd2496942158febd9926">CHARACTER_SET</a> { '(' }</td></tr>
+<tr class="memdesc:ac975ec98657ebd2496942158febd9926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by the character set sequence.  <a href="namespace_a_n_s_i.html#ac975ec98657ebd2496942158febd9926">More...</a><br /></td></tr>
 <tr class="separator:ac975ec98657ebd2496942158febd9926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e3458c09610341abad36d390495fde6"><td class="memItemLeft" align="right" valign="top">constexpr const auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_n_s_i.html#a3e3458c09610341abad36d390495fde6">STRING_TERMINATOR</a> { '\0' }</td></tr>
+<tr class="memdesc:a3e3458c09610341abad36d390495fde6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by some escape sequences to terminate a string.  <a href="namespace_a_n_s_i.html#a3e3458c09610341abad36d390495fde6">More...</a><br /></td></tr>
 <tr class="separator:a3e3458c09610341abad36d390495fde6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -168,13 +177,13 @@ template&lt;typename... VT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00029">29</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00040">40</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespace_a_n_s_i_a977251e5c42aaa7c2d2cdbf9cbc7e29d_icgraph.png" border="0" usemap="#anamespace_a_n_s_i_a977251e5c42aaa7c2d2cdbf9cbc7e29d_icgraph" alt=""/></div>
 <map name="anamespace_a_n_s_i_a977251e5c42aaa7c2d2cdbf9cbc7e29d_icgraph" id="anamespace_a_n_s_i_a977251e5c42aaa7c2d2cdbf9cbc7e29d_icgraph">
-<area shape="rect" title=" " alt="" coords="531,773,685,800"/>
+<area shape="rect" title=" " alt="" coords="531,824,685,851"/>
 <area shape="rect" href="namespacesys_1_1term.html#aea24a7cda941edf0869e0a066ae1f46b" title="Clear all currently set tab stops." alt="" coords="285,5,470,32"/>
 <area shape="rect" href="namespacesys_1_1term.html#a184ce6f575f97f3e276d22679b4ad1fe" title="Removes tab stops from the current column, if there is one." alt="" coords="296,60,459,87"/>
 <area shape="rect" href="namespacesys_1_1term.html#ac9b3d465dc41e71bea03218933866ba2" title="Move the cursor backwards on the current line." alt="" coords="287,115,467,141"/>
@@ -202,10 +211,12 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="namespacesys_1_1term.html#a16900ae3e27182fc2781e83ae771b775" title="Set whether the cursor is blinking or not." alt="" coords="292,1229,463,1256"/>
 <area shape="rect" href="namespacesys_1_1term.html#ac06e935eb8bbd977e0523094c9e907ab" title="Set the cursor&#39;s position to a given column and row." alt="" coords="283,1280,471,1307"/>
 <area shape="rect" href="namespacesys_1_1term.html#a1548bc8d65838226fd6c7e805fdb5b44" title="Set whether the cursor is visible or not." alt="" coords="287,1331,467,1357"/>
-<area shape="rect" href="namespacesys_1_1term.html#a8245d28a32722c19d37e8b2d46114407" title="Set the format of the screen and text as specified by the given mode." alt="" coords="272,1381,483,1408"/>
+<area shape="rect" href="namespacesys_1_1term.html#a88023359594ad2b4fd141c438ae262ff" title="Set the format of the screen and text as specified by the given mode." alt="" coords="272,1381,483,1408"/>
 <area shape="rect" href="namespacesys_1_1term.html#ae3c10a85f713b54eca7892932873fce3" title="Set the operation mode for the numberpad/cursor keys." alt="" coords="298,1432,457,1459"/>
 <area shape="rect" href="namespacesys_1_1term.html#ac8eba595bee4d7b95c475024ede55fb2" title="Enable or disable the alternate screen buffer." alt="" coords="289,1483,466,1509"/>
 <area shape="rect" href="namespacesys_1_1term.html#ae58469eae65fb1b1f890aa7d910d00e1" title="Sets a tab stop at the current cursor column, causing any applicable tab characters to align to the c..." alt="" coords="301,1533,454,1560"/>
+<area shape="rect" href="namespacesys_1_1term.html#ac74c1548c9943cbb24b8001b3cadba99" title="Set the console window title to a given string." alt="" coords="291,1584,464,1611"/>
+<area shape="rect" href="namespacesys_1_1term.html#a3a91c586766ae125ce8d6c054e76d608" title="Sets the following terminal properties:" alt="" coords="306,1635,449,1661"/>
 <area shape="rect" href="namespacesys_1_1term.html#a9ddd3b8c3ba480a3cc1edae7cf2b0b1e" title="Clear all currently set tab stops." alt="" coords="22,5,207,32"/>
 <area shape="rect" href="namespacesys_1_1term.html#ad237f3ea2b01d98d249cabc950a9a69f" title="Removes tab stops from the current column, if there is one." alt="" coords="33,56,196,83"/>
 <area shape="rect" href="structsys_1_1term_1_1_cursor.html#a4d68379789f80ae8e0333d25889c78b4" title=" " alt="" coords="49,107,180,149"/>
@@ -214,16 +225,14 @@ Here is the caller graph for this function:</div>
 <area shape="rect" href="namespacesys_1_1term.html#a045c2114905b8cd47ae8c0f6ba329b9a" title="Move the cursor to the previous column with a tab stop. &#160;If there are no more tab stops,..." alt="" coords="14,419,215,445"/>
 <area shape="rect" href="namespacesys_1_1term.html#a5f37fa3891a827ef85baa868be412322" title="Move the cursor to the next column with a tab stop. &#160;If there are no more tab stops,..." alt="" coords="19,469,210,496"/>
 <area shape="rect" href="structsys_1_1term_1_1_cursor.html#a98765341a012e7746b21454cd9aa7694" title=" " alt="" coords="42,520,187,547"/>
-<area shape="rect" href="structsys_1_1term_1_1_cursor.html#ae23e59cd9629f74f1a73e42ef15fb567" title=" " alt="" coords="37,925,192,952"/>
-<area shape="rect" href="namespacesys_1_1term.html#a8d72fa695b0be5c2fd75217f974a8a47" title="Modify the color value of a specified color palette index." alt="" coords="14,976,215,1003"/>
-<area shape="rect" href="structsys_1_1term_1_1_cursor.html#a218f38fac7c22605e2a7d6c0d793f592" title=" " alt="" coords="36,1027,193,1053"/>
-<area shape="rect" href="namespacesys_1_1term.html#aa666a07c811cb8ebe7bb865624930d7a" title="Scroll the viewport down by inserting lines from the top." alt="" coords="39,1077,190,1104"/>
-<area shape="rect" href="namespacesys_1_1term.html#a8ee4da3de254002a0dbba0ae02c18299" title="Scroll the viewport up by inserting lines from the bottom." alt="" coords="47,1128,182,1155"/>
-<area shape="rect" href="namespacesys_1_1term.html#a0d97e75f623a8f4bdf6edd189fb541e8" title="Set the character set to DEC Line Drawing." alt="" coords="12,1179,217,1205"/>
-<area shape="rect" href="namespacesys_1_1term.html#a6c84bc8e31e95cb1df8448cd1a872752" title="Set the character set to ASCII." alt="" coords="5,1229,224,1256"/>
-<area shape="rect" href="namespacesys_1_1term.html#a5ebccd6cb4c004b7425ad8c68fd52473" title="Disables the cursor blink effect." alt="" coords="31,1281,198,1322"/>
-<area shape="rect" href="namespacesys_1_1term.html#af2ed209321c0708942912fc720fd2f71" title="Enables the cursor blink effect." alt="" coords="19,1347,211,1373"/>
-<area shape="rect" href="namespacesys_1_1term.html#ab4e84e4b833e01a8a31e474f69ebffe8" title="Set the cursor&#39;s position to a given column and row." alt="" coords="21,1397,209,1424"/>
+<area shape="rect" href="structsys_1_1term_1_1_cursor.html#ae23e59cd9629f74f1a73e42ef15fb567" title=" " alt="" coords="37,951,192,977"/>
+<area shape="rect" href="namespacesys_1_1term.html#a8d72fa695b0be5c2fd75217f974a8a47" title="Modify the color value of a specified color palette index." alt="" coords="14,1001,215,1028"/>
+<area shape="rect" href="structsys_1_1term_1_1_cursor.html#a218f38fac7c22605e2a7d6c0d793f592" title=" " alt="" coords="36,1052,193,1079"/>
+<area shape="rect" href="namespacesys_1_1term.html#aa666a07c811cb8ebe7bb865624930d7a" title="Scroll the viewport down by inserting lines from the top." alt="" coords="39,1103,190,1129"/>
+<area shape="rect" href="namespacesys_1_1term.html#a8ee4da3de254002a0dbba0ae02c18299" title="Scroll the viewport up by inserting lines from the bottom." alt="" coords="47,1153,182,1180"/>
+<area shape="rect" href="namespacesys_1_1term.html#a0d97e75f623a8f4bdf6edd189fb541e8" title="Set the character set to DEC Line Drawing." alt="" coords="12,1204,217,1231"/>
+<area shape="rect" href="namespacesys_1_1term.html#a6c84bc8e31e95cb1df8448cd1a872752" title="Set the character set to ASCII." alt="" coords="5,1255,224,1281"/>
+<area shape="rect" href="namespacesys_1_1term.html#a5ebccd6cb4c004b7425ad8c68fd52473" title="Disables the cursor blink effect." alt="" coords="31,1306,198,1347"/>
 </map>
 </div>
 
@@ -250,9 +259,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Background color. </p>
+<p>Defines a color sequence as applying to the background layer. </p>
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00017">17</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00021">21</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -276,7 +285,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00025">25</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p>Used by the character set sequence. </p>
+
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00036">36</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -290,7 +301,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const auto ANSI::CSI { '\133' }</td>
+          <td class="memname">constexpr const auto ANSI::CSI { '[' }</td>
         </tr>
       </table>
   </td>
@@ -302,7 +313,7 @@ Here is the caller graph for this function:</div>
 
 <p>Control <a class="el" href="struct_a_n_s_i_1_1_sequence.html" title="Virtual functor that exposes multiple methods of executing an ANSI escape sequence....">Sequence</a> Introducer. Only valid when preceeded by ESC. </p>
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00013">13</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00014">14</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -326,7 +337,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00023">23</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p>Midsequence used by the cursor blinking sequence. </p>
+
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00033">33</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -350,7 +363,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00022">22</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p>Midsequence used by the cursor visibility sequence. </p>
+
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00031">31</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -374,7 +389,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00020">20</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p>Character used by some toggleable escape sequences to define that it should be disabled. </p>
+
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00028">28</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -398,7 +415,35 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00019">19</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p>Character used by some toggleable escape sequences to define that it should be enabled. </p>
+
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00026">26</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+
+</div>
+</div>
+<a id="a760aa24c8cf8bfed2b1d0a2d1d67edd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a760aa24c8cf8bfed2b1d0a2d1d67edd7">&#9670;&nbsp;</a></span>END</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr const auto ANSI::END { &quot;m&quot; }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Color sequence end character. </p>
+
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00023">23</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -412,7 +457,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const auto ANSI::ESC { '\033' }</td>
+          <td class="memname">constexpr const auto ANSI::ESC { '\x1b' }</td>
         </tr>
       </table>
   </td>
@@ -448,9 +493,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Foreground color. </p>
+<p>Defines a color sequence as applying to the foreground (text) layer. </p>
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00016">16</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00019">19</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -464,7 +509,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const auto ANSI::OSC { '\133' }</td>
+          <td class="memname">constexpr const auto ANSI::OSC { ']' }</td>
         </tr>
       </table>
   </td>
@@ -476,7 +521,7 @@ Here is the caller graph for this function:</div>
 
 <p>Operating System Command. Only valid when preceeded by ESC. </p>
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00014">14</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00016">16</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 
 </div>
 </div>
@@ -500,7 +545,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00026">26</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
+<p>Used by some escape sequences to terminate a string. </p>
+
+<p class="definition">Definition at line <a class="el" href="_a_n_s_i_defs_8h.html_source#l00038">38</a> of file <a class="el" href="_a_n_s_i_defs_8h.html_source">ANSIDefs.h</a>.</p>
 
 </div>
 </div>

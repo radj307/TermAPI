@@ -1,0 +1,4 @@
+<map id="sys::term::getCursorPosition" name="sys::term::getCursorPosition">
+<area shape="rect" id="node1" title="Retrieve the current position of the cursor, measured in characters of the screen buffer." alt="" coords="184,13,372,39"/>
+<area shape="rect" id="node2" href="$structsys_1_1term_1_1_cursor.html#a17ee1a11ba45812bfee4c2c1aed75e9b" title=" " alt="" coords="5,5,136,47"/>
+</map>

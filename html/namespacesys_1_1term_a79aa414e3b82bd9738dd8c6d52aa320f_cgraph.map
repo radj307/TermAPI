@@ -1,0 +1,5 @@
+<map id="sys::term::getCursorPosition" name="sys::term::getCursorPosition">
+<area shape="rect" id="node1" title="Retrieve the current position of the cursor, measured in characters of the screen buffer." alt="" coords="5,42,193,69"/>
+<area shape="rect" id="node2" href="$namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025" title="Receive a query response from STDIN, and return it as a string. &#160;&#160;It is ___highly discouraged___ to c..." alt="" coords="272,5,419,47"/>
+<area shape="rect" id="node3" href="$namespacesys_1_1term.html#a4aba5f7abf46999b265faedca76c9dbb" title="Prints the escape sequence for DECXCPR (Report Cursor Position). Not thread&#45;safe when multiple thread..." alt="" coords="241,71,449,98"/>
+</map>

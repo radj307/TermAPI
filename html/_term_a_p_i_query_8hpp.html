@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="termcolor.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">TermAPI
-   &#160;<span id="projectnumber">2.1.0</span>
+   &#160;<span id="projectnumber">3.0.0</span>
    </div>
    <div id="projectbrief">C++20 ANSI Escape Sequence Library</div>
   </td>
@@ -99,9 +99,9 @@ $(document).ready(function(){initNavTree('_term_a_p_i_query_8hpp.html',''); init
  This header requires non-standard &lt;conio.h&gt;  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;ANSIDefs.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="_cursor_origin_8h_source.html">CursorOrigin.h</a>&gt;</code><br />
 <code>#include &lt;str.hpp&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;thread&gt;</code><br />
 <code>#include &lt;conio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -109,13 +109,13 @@ Include dependency graph for TermAPIQuery.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_term_a_p_i_query_8hpp__incl.png" border="0" usemap="#a_x_1_2___workspace_2__repo_2_term_a_p_i_2_term_a_p_i_2_term_a_p_i_query_8hpp" alt=""/></div>
 <map name="a_x_1_2___workspace_2__repo_2_term_a_p_i_2_term_a_p_i_2_term_a_p_i_query_8hpp" id="a_x_1_2___workspace_2__repo_2_term_a_p_i_2_term_a_p_i_2_term_a_p_i_query_8hpp">
-<area shape="rect" title="TermAPI extension that includes query escape sequences, such as retrieving the cursor position...." alt="" coords="153,5,397,47"/>
+<area shape="rect" title="TermAPI extension that includes query escape sequences, such as retrieving the cursor position...." alt="" coords="199,5,443,47"/>
 <area shape="rect" title=" " alt="" coords="5,95,95,121"/>
-<area shape="rect" title=" " alt="" coords="119,95,181,121"/>
-<area shape="rect" title=" " alt="" coords="206,95,259,121"/>
-<area shape="rect" title=" " alt="" coords="283,95,355,121"/>
-<area shape="rect" title=" " alt="" coords="379,95,438,121"/>
-<area shape="rect" title=" " alt="" coords="462,95,526,121"/>
+<area shape="rect" href="_cursor_origin_8h.html" title=" " alt="" coords="119,95,224,121"/>
+<area shape="rect" title=" " alt="" coords="248,95,311,121"/>
+<area shape="rect" title=" " alt="" coords="335,95,389,121"/>
+<area shape="rect" title=" " alt="" coords="413,95,471,121"/>
+<area shape="rect" title=" " alt="" coords="495,95,559,121"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -135,10 +135,9 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacesys"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesys.html">sys</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacesys_1_1term"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term.html">sys::term</a></td></tr>
-<tr class="memdesc:namespacesys_1_1term"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains objects, methods, &amp; functions related to using cross-platform <a class="el" href="namespace_a_n_s_i.html">ANSI</a> escape sequences. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespace__internal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace__internal.html">_internal</a></td></tr>
-<tr class="memdesc:namespace__internal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains variables/functions not meant to be accessed from outside of the TermAPI library. <br /></td></tr>
+<tr class="memdesc:namespace__internal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains functions used internally by the <a class="el" href="namespacesys_1_1term.html">sys::term</a> namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacesys_1_1term_1_1__internal"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term_1_1__internal.html">sys::term::_internal</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,18 +148,18 @@ Functions</h2></td></tr>
 <tr class="memdesc:a55f1031356504dadcabf87f97210f025"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a query response from STDIN, and return it as a string. <br  />
  It is ___highly discouraged___ to call this function from outside of <a class="el" href="_term_a_p_i_query_8hpp.html" title="TermAPI extension that includes query escape sequences, such as retrieving the cursor position....">TermAPIQuery.hpp</a>!  <a href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">More...</a><br /></td></tr>
 <tr class="separator:a55f1031356504dadcabf87f97210f025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7ff792383660c6cb11f2a60d05580b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term.html#ad7ff792383660c6cb11f2a60d05580b2">sys::term::reportCursorPosition</a> () noexcept</td></tr>
-<tr class="memdesc:ad7ff792383660c6cb11f2a60d05580b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the escape sequence for DECXCPR (Report <a class="el" href="structsys_1_1term_1_1_cursor.html">Cursor</a> Position). Not thread-safe when multiple threads are printing/reading from STDOUT/STDIN. <br  />
- Emits to STDIN: "ESC[&lt;ROW&gt;;&lt;COLUMN&gt;R".  <a href="namespacesys_1_1term.html#ad7ff792383660c6cb11f2a60d05580b2">More...</a><br /></td></tr>
-<tr class="separator:ad7ff792383660c6cb11f2a60d05580b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bda1565edafc07baa03d503792d15e6"><td class="memTemplParams" colspan="2">template&lt;typename RT  = unsigned short&gt; </td></tr>
-<tr class="memitem:a4bda1565edafc07baa03d503792d15e6"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_integral&lt; RT &gt;::value, std::pair&lt; RT, RT &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term.html#a4bda1565edafc07baa03d503792d15e6">sys::term::getCursorPosition</a> () noexcept(false)</td></tr>
-<tr class="memdesc:a4bda1565edafc07baa03d503792d15e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current position of the cursor, measured in characters of the screen buffer.  <a href="namespacesys_1_1term.html#a4bda1565edafc07baa03d503792d15e6">More...</a><br /></td></tr>
-<tr class="separator:a4bda1565edafc07baa03d503792d15e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0f820342aaabefccfcc98db5495c9d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term.html#ae0f820342aaabefccfcc98db5495c9d1">sys::term::deviceAttributes</a> () noexcept</td></tr>
-<tr class="memdesc:ae0f820342aaabefccfcc98db5495c9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This causes the device's attributes to be emitted to STDIN. <br  />
- Emits to STDIN (windows): "\x1b[?1;0c" (Indicates "VT101 with No Options")  <a href="namespacesys_1_1term.html#ae0f820342aaabefccfcc98db5495c9d1">More...</a><br /></td></tr>
-<tr class="separator:ae0f820342aaabefccfcc98db5495c9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aba5f7abf46999b265faedca76c9dbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term.html#a4aba5f7abf46999b265faedca76c9dbb">sys::term::ReportCursorPosition</a> () noexcept</td></tr>
+<tr class="memdesc:a4aba5f7abf46999b265faedca76c9dbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the escape sequence for DECXCPR (Report <a class="el" href="structsys_1_1term_1_1_cursor.html">Cursor</a> Position). Not thread-safe when multiple threads are printing/reading from STDOUT/STDIN. <br  />
+ Emits "ESC[&lt;ROW&gt;;&lt;COLUMN&gt;R" to STDIN.  <a href="namespacesys_1_1term.html#a4aba5f7abf46999b265faedca76c9dbb">More...</a><br /></td></tr>
+<tr class="separator:a4aba5f7abf46999b265faedca76c9dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79aa414e3b82bd9738dd8c6d52aa320f"><td class="memTemplParams" colspan="2">template&lt;std::integral RT = unsigned short&gt; </td></tr>
+<tr class="memitem:a79aa414e3b82bd9738dd8c6d52aa320f"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; RT, RT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term.html#a79aa414e3b82bd9738dd8c6d52aa320f">sys::term::getCursorPosition</a> () noexcept(false)</td></tr>
+<tr class="memdesc:a79aa414e3b82bd9738dd8c6d52aa320f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the current position of the cursor, measured in characters of the screen buffer.  <a href="namespacesys_1_1term.html#a79aa414e3b82bd9738dd8c6d52aa320f">More...</a><br /></td></tr>
+<tr class="separator:a79aa414e3b82bd9738dd8c6d52aa320f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87c48baeaefc2ae3de377b18f7d5863d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term.html#a87c48baeaefc2ae3de377b18f7d5863d">sys::term::ReportDeviceAttributes</a> () noexcept</td></tr>
+<tr class="memdesc:a87c48baeaefc2ae3de377b18f7d5863d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This causes the device's attributes to be emitted to STDIN. <br  />
+ Emits to STDIN (windows): "\x1b[?1;0c" (Indicates "VT101 with No Options")  <a href="namespacesys_1_1term.html#a87c48baeaefc2ae3de377b18f7d5863d">More...</a><br /></td></tr>
+<tr class="separator:a87c48baeaefc2ae3de377b18f7d5863d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77930a4d97877c68026bd2aba18c6313"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term.html#a77930a4d97877c68026bd2aba18c6313">sys::term::getDeviceAttributes</a> () noexcept</td></tr>
 <tr class="separator:a77930a4d97877c68026bd2aba18c6313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>

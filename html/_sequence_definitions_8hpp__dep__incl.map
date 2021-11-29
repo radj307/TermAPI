@@ -1,0 +1,6 @@
+<map id="X:/_Workspace/_repo/TermAPI/TermAPI/SequenceDefinitions.hpp" name="X:/_Workspace/_repo/TermAPI/TermAPI/SequenceDefinitions.hpp">
+<area shape="rect" id="node1" title="Contains ANSI escape sequence functors derived from Sequence. &#160;&#160;Covers most/all of the virtual sequen..." alt="" coords="78,5,355,47"/>
+<area shape="rect" id="node2" href="$_sequence_8hpp.html" title=" " alt="" coords="108,95,325,136"/>
+<area shape="rect" id="node3" href="$_message_8hpp.html" title=" " alt="" coords="5,184,217,225"/>
+<area shape="rect" id="node4" href="$_term_a_p_i_query_8hpp.html" title="TermAPI extension that includes query escape sequences, such as retrieving the cursor position...." alt="" coords="241,184,485,225"/>
+</map>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['termmessage_369',['TermMessage',['../structsys_1_1term_1_1_term_message.html#aab5f074b7b6bcb0bdf50ad64eadb23f8',1,'sys::term::TermMessage']]],
-  ['textcolor_370',['textcolor',['../structcolor_1_1textcolor.html#aaa0a73a239656d1f80168184b266dc2e',1,'color::textcolor']]]
+  ['textcolor_428',['textcolor',['../structcolor_1_1textcolor.html#aaa0a73a239656d1f80168184b266dc2e',1,'color::textcolor']]],
+  ['token_429',['Token',['../structcolor_1_1file_1_1token_1_1_token.html#a0feca7e33b2b869b7334668296c995e9',1,'color::file::token::Token::Token(std::string str, const TokenType &amp;type)'],['../structcolor_1_1file_1_1token_1_1_token.html#a3d4438f8c73a8e8e021bd8789bcdfde6',1,'color::file::token::Token::Token(const TokenType &amp;type)'],['../structcolor_1_1file_1_1token_1_1_token.html#a4a1f0b44327308b5cd531d75d1629d2b',1,'color::file::token::Token::Token(std::pair&lt; std::string, TokenType &gt; pr)']]]
 ];

@@ -1,7 +1,8 @@
 var structcolor_1_1setcolor =
 [
-    [ "setcolor", "structcolor_1_1setcolor.html#ab70ce34d20daf16022e9f68cb690933b", null ],
-    [ "setcolor", "structcolor_1_1setcolor.html#aec9c346cce9da96b0ba7775133cc57da", null ],
+    [ "setcolor", "structcolor_1_1setcolor.html#abef336a7234867ac4a0cae61d0667325", null ],
+    [ "setcolor", "structcolor_1_1setcolor.html#a43931951bad5b60dffd2b16551e1c127", null ],
+    [ "setcolor", "structcolor_1_1setcolor.html#ab41af4c230d82e1ff80d3d7368fd71c4", null ],
     [ "addFormat", "structcolor_1_1setcolor.html#a7eee62d7da71458569f635081d36d947", null ],
     [ "getFormat", "structcolor_1_1setcolor.html#a128dc252354c3e8a3fd9d51164504553", null ],
     [ "operator std::string", "structcolor_1_1setcolor.html#a23348d70bd00efebca926e440edce46e", null ],

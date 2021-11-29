@@ -1,0 +1,4 @@
+<map id="sys::term::debug" name="sys::term::debug">
+<area shape="rect" id="node1" title="Prints &quot;[DEBUG]&quot; in magenta." alt="" coords="5,5,125,32"/>
+<area shape="rect" id="node2" href="$namespacesys_1_1term.html#af0cab74039df5a1952faf03123f8a63e" title="Creates &amp; returns a message Sequence." alt="" coords="173,5,351,32"/>
+</map>

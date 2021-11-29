@@ -1,0 +1,10 @@
+<map id="sys::term::make_message" name="sys::term::make_message">
+<area shape="rect" id="node1" title="Creates &amp; returns a message Sequence." alt="" coords="173,157,351,184"/>
+<area shape="rect" id="node2" href="$namespacesys_1_1term.html#a3807b0d46186357da20378d916bd9ef2" title="Prints &quot;[ERROR]&quot; in bold intense_red." alt="" coords="14,5,117,32"/>
+<area shape="rect" id="node3" href="$namespacesys_1_1term.html#a4282dda467c9aa4ccbe4b788049ef8aa" title="Prints &quot;[DEBUG]&quot; in magenta." alt="" coords="5,56,125,83"/>
+<area shape="rect" id="node4" href="$namespacesys_1_1term.html#a05b82f3bcbd8735902fdfb66ffd82e90" title="Prints &quot;[ERROR]&quot; in intense_red." alt="" coords="10,107,121,133"/>
+<area shape="rect" id="node5" href="$namespacesys_1_1term.html#a9f63ba87e5a3da7566dd709d646d2789" title="Prints &quot;[INFO]&quot; in light_gray." alt="" coords="13,157,118,184"/>
+<area shape="rect" id="node6" href="$namespacesys_1_1term.html#a55ea85210148694ef3170816111f9292" title="Prints &quot;[LOG]&quot; in white." alt="" coords="14,208,117,235"/>
+<area shape="rect" id="node7" href="$namespacesys_1_1term.html#a05f3d9da644f8c29f3815da9998f59de" title="Prints &quot;[MSG]&quot; in green." alt="" coords="10,259,121,285"/>
+<area shape="rect" id="node8" href="$namespacesys_1_1term.html#a559ed0ba12e38edd5370d04bb7eadd27" title="Prints &quot;[WARN]&quot; in orange." alt="" coords="9,309,121,336"/>
+</map>

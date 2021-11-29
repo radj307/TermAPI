@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="termcolor.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">TermAPI
-   &#160;<span id="projectnumber">2.1.0</span>
+   &#160;<span id="projectnumber">3.0.0</span>
    </div>
    <div id="projectbrief">C++20 ANSI Escape Sequence Library</div>
   </td>
@@ -94,96 +94,101 @@ $(document).ready(function(){initNavTree('_term_a_p_i_query_8hpp_source.html',''
 <a href="_term_a_p_i_query_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;ANSIDefs.h&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;str.hpp&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;thread&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;conio.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesys_1_1term.html">sys::term</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">using namespace </span>std::chrono_literals;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">namespace </span><a class="code" href="namespace__internal.html">_internal</a> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">   28</a></span>&#160;        <span class="keyword">inline</span> std::string <a class="code" href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">get_query_response</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; timeout = 256, <span class="keyword">const</span> <span class="keywordtype">bool</span> flush_output_stream = <span class="keyword">false</span>) noexcept</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">if</span> (flush_output_stream)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                fflush(stdout);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            std::string seq; <span class="comment">// already has enough space reserved</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i{ 0 }; !_kbhit() &amp;&amp; i &lt; timeout; ++i) <span class="comment">// wait until a &quot;key press&quot; or until timeout is reached.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                std::this_thread::sleep_for(1ms);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">while</span> (_kbhit()) <span class="comment">// while a key is &quot;pressed&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                seq += <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(_getch()); <span class="comment">// get key code, cast to char</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> seq;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="namespacesys_1_1term.html#ad7ff792383660c6cb11f2a60d05580b2">   45</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacesys_1_1term.html#ad7ff792383660c6cb11f2a60d05580b2">reportCursorPosition</a>() noexcept</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        fflush(stdin); <span class="comment">// Flush STDIN</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        printf(<a class="code" href="dummy.html">SEQ_ESC</a> <a class="code" href="dummy.html">SEQ_BRACKET</a> <span class="stringliteral">&quot;6n&quot;</span>); <span class="comment">// Send DECXCPR - Report Cursor Position</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        fflush(stdout); <span class="comment">// Flush STDOUT</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> RT = <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>&gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="namespacesys_1_1term.html#a4bda1565edafc07baa03d503792d15e6">   58</a></span>&#160;    <span class="keyword">inline</span> std::enable_if&lt;std::is_integral&lt;RT&gt;::value, std::pair&lt;RT, RT&gt;&gt;::type <a class="code" href="namespacesys_1_1term.html#a4bda1565edafc07baa03d503792d15e6">getCursorPosition</a>() noexcept(false)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="namespacesys_1_1term.html#ad7ff792383660c6cb11f2a60d05580b2">reportCursorPosition</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::string row, col;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">bool</span> select_col{ <span class="keyword">false</span> }; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; c : <a class="code" href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">_internal::get_query_response</a>()) {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">switch</span> (c) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;0&#39;</span>: [[fallthrough]];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>: [[fallthrough]];</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>: [[fallthrough]];</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>: [[fallthrough]];</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>: [[fallthrough]];</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;5&#39;</span>: [[fallthrough]];</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;6&#39;</span>: [[fallthrough]];</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;7&#39;</span>: [[fallthrough]];</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;8&#39;</span>: [[fallthrough]];</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;9&#39;</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">if</span> (!select_col)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                    row += c;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    col += c;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;;&#39;</span>: <span class="comment">// delim</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                select_col = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="dummy.html">INSEQ_ESC</a>: [[fallthrough]];<span class="comment">// ESC</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">case</span> INSEQ_BRACKET:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>: <span class="comment">// sequence end</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">if</span> (!row.empty() &amp;&amp; !col.empty()) <span class="comment">// divider delim has been reached</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                    <span class="keywordflow">return</span>{ <span class="keyword">static_cast&lt;</span>RT<span class="keyword">&gt;</span>(!!<a class="code" href="namespacesys_1_1term_1_1__internal.html#a255133f3ddcd30806dedc04230ebbd0f">_internal::CURSOR_POS_MIN_ZERO</a> + str::stoull(row)), <span class="keyword">static_cast&lt;</span>RT<span class="keyword">&gt;</span>(!!<a class="code" href="namespacesys_1_1term_1_1__internal.html#a255133f3ddcd30806dedc04230ebbd0f">_internal::CURSOR_POS_MIN_ZERO</a> + str::stoull(col)) };</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="comment">// else:</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                [[fallthrough]];</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">throw</span> std::exception(str::stringify(<span class="stringliteral">&quot;getCursorPosition()\tReceived unexpected character: \&#39;&quot;</span>, c, <span class="stringliteral">&quot;\&#39;!&quot;</span>).c_str());</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">throw</span> std::exception(<span class="stringliteral">&quot;getCursorPosition()\tDidn&#39;t receive expected escape sequence! No ending character found!&quot;</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="namespacesys_1_1term.html#ae0f820342aaabefccfcc98db5495c9d1">  102</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacesys_1_1term.html#ae0f820342aaabefccfcc98db5495c9d1">deviceAttributes</a>() noexcept</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        printf(<a class="code" href="dummy.html">SEQ_ESC</a> <a class="code" href="dummy.html">SEQ_BRACKET</a> <span class="stringliteral">&quot;0c&quot;</span>);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="namespacesys_1_1term.html#a77930a4d97877c68026bd2aba18c6313">  107</a></span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacesys_1_1term.html#a77930a4d97877c68026bd2aba18c6313">getDeviceAttributes</a>() noexcept</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    {</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="namespacesys_1_1term.html#ae0f820342aaabefccfcc98db5495c9d1">deviceAttributes</a>();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">_internal::get_query_response</a>();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="ttc" id="adummy_html"><div class="ttname"><a href="dummy.html">SEQ_ESC</a></div><div class="ttdeci">#define SEQ_ESC</div><div class="ttdoc">Escape character.</div><div class="ttdef"><b>Definition:</b> <a href="_a_n_s_i_defs_8h.html_source#l00036">ANSIDefs.h:36</a></div></div>
-<div class="ttc" id="anamespace__internal_html"><div class="ttname"><a href="namespace__internal.html">_internal</a></div><div class="ttdoc">Contains variables/functions not meant to be accessed from outside of the TermAPI library.</div></div>
-<div class="ttc" id="anamespacesys_1_1term_1_1__internal_html_a255133f3ddcd30806dedc04230ebbd0f"><div class="ttname"><a href="namespacesys_1_1term_1_1__internal.html#a255133f3ddcd30806dedc04230ebbd0f">sys::term::_internal::CURSOR_POS_MIN_ZERO</a></div><div class="ttdeci">static bool CURSOR_POS_MIN_ZERO</div><div class="ttdef"><b>Definition:</b> <a href="_t_e_r_m_a_p_i_8h.html_source#l00020">TERMAPI.h:20</a></div></div>
-<div class="ttc" id="anamespacesys_1_1term_1_1__internal_html_a55f1031356504dadcabf87f97210f025"><div class="ttname"><a href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">sys::term::_internal::get_query_response</a></div><div class="ttdeci">std::string get_query_response(const int &amp;timeout=256, const bool flush_output_stream=false) noexcept</div><div class="ttdoc">Receive a query response from STDIN, and return it as a string.   It is ___highly discouraged___ to c...</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_query_8hpp_source.html#l00028">TermAPIQuery.hpp:28</a></div></div>
-<div class="ttc" id="anamespacesys_1_1term_html"><div class="ttname"><a href="namespacesys_1_1term.html">sys::term</a></div><div class="ttdoc">Contains objects, methods, &amp; functions related to using cross-platform ANSI escape sequences.</div></div>
-<div class="ttc" id="anamespacesys_1_1term_html_a4bda1565edafc07baa03d503792d15e6"><div class="ttname"><a href="namespacesys_1_1term.html#a4bda1565edafc07baa03d503792d15e6">sys::term::getCursorPosition</a></div><div class="ttdeci">std::enable_if&lt; std::is_integral&lt; RT &gt;::value, std::pair&lt; RT, RT &gt; &gt;::type getCursorPosition() noexcept(false)</div><div class="ttdoc">Retrieve the current position of the cursor, measured in characters of the screen buffer.</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_query_8hpp_source.html#l00058">TermAPIQuery.hpp:58</a></div></div>
-<div class="ttc" id="anamespacesys_1_1term_html_a77930a4d97877c68026bd2aba18c6313"><div class="ttname"><a href="namespacesys_1_1term.html#a77930a4d97877c68026bd2aba18c6313">sys::term::getDeviceAttributes</a></div><div class="ttdeci">std::string getDeviceAttributes() noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_query_8hpp_source.html#l00107">TermAPIQuery.hpp:107</a></div></div>
-<div class="ttc" id="anamespacesys_1_1term_html_ad7ff792383660c6cb11f2a60d05580b2"><div class="ttname"><a href="namespacesys_1_1term.html#ad7ff792383660c6cb11f2a60d05580b2">sys::term::reportCursorPosition</a></div><div class="ttdeci">void reportCursorPosition() noexcept</div><div class="ttdoc">Prints the escape sequence for DECXCPR (Report Cursor Position). Not thread-safe when multiple thread...</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_query_8hpp_source.html#l00045">TermAPIQuery.hpp:45</a></div></div>
-<div class="ttc" id="anamespacesys_1_1term_html_ae0f820342aaabefccfcc98db5495c9d1"><div class="ttname"><a href="namespacesys_1_1term.html#ae0f820342aaabefccfcc98db5495c9d1">sys::term::deviceAttributes</a></div><div class="ttdeci">void deviceAttributes() noexcept</div><div class="ttdoc">This causes the device's attributes to be emitted to STDIN.   Emits to STDIN (windows): &quot;\x1b[?...</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_query_8hpp_source.html#l00102">TermAPIQuery.hpp:102</a></div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_cursor_origin_8h.html">CursorOrigin.h</a>&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;str.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;conio.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacesys_1_1term.html">sys::term</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">using namespace </span>std::chrono_literals;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">using namespace </span><a class="code" href="namespace_a_n_s_i.html">ANSI</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">namespace </span><a class="code" href="namespace__internal.html">_internal</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">   30</a></span>&#160;        <span class="keyword">inline</span> std::string <a class="code" href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">get_query_response</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; timeout = 256, <span class="keyword">const</span> <span class="keywordtype">bool</span> flush_output_stream = <span class="keyword">false</span>) noexcept</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">if</span> (flush_output_stream)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                fflush(stdout);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            std::string seq; <span class="comment">// already has enough space reserved</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i{ 0 }; !_kbhit() &amp;&amp; i &lt; timeout; ++i) <span class="comment">// wait until a &quot;key press&quot; or until timeout is reached.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                std::this_thread::sleep_for(1ms);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">while</span> (_kbhit()) <span class="comment">// while a key is &quot;pressed&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                seq += <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(_getch()); <span class="comment">// get key code, cast to char</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> seq;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="namespacesys_1_1term.html#a4aba5f7abf46999b265faedca76c9dbb">   48</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacesys_1_1term.html#a4aba5f7abf46999b265faedca76c9dbb">ReportCursorPosition</a>() noexcept</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::cout &lt;&lt; <a class="code" href="namespace_a_n_s_i.html#a44c3e4e788ab40a7fac378f198fe5053">ESC</a> &lt;&lt; <a class="code" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">CSI</a> &lt;&lt; <span class="stringliteral">&quot;6n&quot;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span>&lt;std::<span class="keywordtype">int</span>egral RT = <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>&gt;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="namespacesys_1_1term.html#a79aa414e3b82bd9738dd8c6d52aa320f">   59</a></span>&#160;    <span class="keyword">inline</span> std::pair&lt;RT, RT&gt; <a class="code" href="namespacesys_1_1term.html#a79aa414e3b82bd9738dd8c6d52aa320f">getCursorPosition</a>() noexcept(false)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="namespacesys_1_1term.html#a4aba5f7abf46999b265faedca76c9dbb">ReportCursorPosition</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::string row, col;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">bool</span> select_col{ <span class="keyword">false</span> }; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; c : <a class="code" href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">_internal::get_query_response</a>()) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keyword">using namespace </span><a class="code" href="namespace_a_n_s_i.html">ANSI</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">switch</span> (c) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;0&#39;</span>: [[fallthrough]];</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;1&#39;</span>: [[fallthrough]];</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;2&#39;</span>: [[fallthrough]];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;3&#39;</span>: [[fallthrough]];</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;4&#39;</span>: [[fallthrough]];</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;5&#39;</span>: [[fallthrough]];</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;6&#39;</span>: [[fallthrough]];</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;7&#39;</span>: [[fallthrough]];</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;8&#39;</span>: [[fallthrough]];</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;9&#39;</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordflow">if</span> (!select_col)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    row += c;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                    col += c;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;;&#39;</span>: <span class="comment">// delim</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                select_col = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespace_a_n_s_i.html#a44c3e4e788ab40a7fac378f198fe5053">ESC</a>: [[fallthrough]];<span class="comment">// ESC</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordflow">case</span> <a class="code" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">CSI</a>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>: <span class="comment">// sequence end</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordflow">if</span> (!row.empty() &amp;&amp; !col.empty()) <span class="comment">// divider delim has been reached</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    <span class="keywordflow">return</span>{ <span class="keyword">static_cast&lt;</span>RT<span class="keyword">&gt;</span>(!!<a class="code" href="namespacesys_1_1term_1_1__internal.html#a98af26a3e67a6497adb8756823f179b1">_internal::CURSOR_MIN_AXIS</a> + str::stoull(row)), <span class="keyword">static_cast&lt;</span>RT<span class="keyword">&gt;</span>(!!<a class="code" href="namespacesys_1_1term_1_1__internal.html#a98af26a3e67a6497adb8756823f179b1">_internal::CURSOR_MIN_AXIS</a> + str::stoull(col)) };</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                <span class="comment">// else:</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                [[fallthrough]];</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keywordflow">throw</span> std::exception(str::stringify(<span class="stringliteral">&quot;getCursorPosition()\tReceived unexpected character: \&#39;&quot;</span>, c, <span class="stringliteral">&quot;\&#39;!&quot;</span>).c_str());</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">throw</span> std::exception(<span class="stringliteral">&quot;getCursorPosition()\tDidn&#39;t receive expected escape sequence! No ending character found!&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="namespacesys_1_1term.html#a87c48baeaefc2ae3de377b18f7d5863d">  104</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespacesys_1_1term.html#a87c48baeaefc2ae3de377b18f7d5863d">ReportDeviceAttributes</a>() noexcept</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        std::cout &lt;&lt; <a class="code" href="namespace_a_n_s_i.html#a44c3e4e788ab40a7fac378f198fe5053">ESC</a> &lt;&lt; <a class="code" href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">CSI</a> &lt;&lt; <span class="stringliteral">&quot;0c&quot;</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="namespacesys_1_1term.html#a77930a4d97877c68026bd2aba18c6313">  110</a></span>&#160;    <span class="keyword">inline</span> std::string <a class="code" href="namespacesys_1_1term.html#a77930a4d97877c68026bd2aba18c6313">getDeviceAttributes</a>() noexcept</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="namespacesys_1_1term.html#a87c48baeaefc2ae3de377b18f7d5863d">ReportDeviceAttributes</a>();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">_internal::get_query_response</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="ttc" id="a_cursor_origin_8h_html"><div class="ttname"><a href="_cursor_origin_8h.html">CursorOrigin.h</a></div></div>
+<div class="ttc" id="anamespace__internal_html"><div class="ttname"><a href="namespace__internal.html">_internal</a></div><div class="ttdoc">Contains functions used internally by the sys::term namespace.</div></div>
+<div class="ttc" id="anamespace_a_n_s_i_html"><div class="ttname"><a href="namespace_a_n_s_i.html">ANSI</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_n_s_i_defs_8h.html_source#l00010">ANSIDefs.h:10</a></div></div>
+<div class="ttc" id="anamespace_a_n_s_i_html_a2944a74fc1b5c3e7b82539fd0a202a66"><div class="ttname"><a href="namespace_a_n_s_i.html#a2944a74fc1b5c3e7b82539fd0a202a66">ANSI::CSI</a></div><div class="ttdeci">constexpr const auto CSI</div><div class="ttdoc">Control Sequence Introducer. Only valid when preceeded by ESC.</div><div class="ttdef"><b>Definition:</b> <a href="_a_n_s_i_defs_8h.html_source#l00014">ANSIDefs.h:14</a></div></div>
+<div class="ttc" id="anamespace_a_n_s_i_html_a44c3e4e788ab40a7fac378f198fe5053"><div class="ttname"><a href="namespace_a_n_s_i.html#a44c3e4e788ab40a7fac378f198fe5053">ANSI::ESC</a></div><div class="ttdeci">constexpr const auto ESC</div><div class="ttdoc">Escape Character. Required at the beginning of all escape sequences.</div><div class="ttdef"><b>Definition:</b> <a href="_a_n_s_i_defs_8h.html_source#l00012">ANSIDefs.h:12</a></div></div>
+<div class="ttc" id="anamespacesys_1_1term_1_1__internal_html_a55f1031356504dadcabf87f97210f025"><div class="ttname"><a href="namespacesys_1_1term_1_1__internal.html#a55f1031356504dadcabf87f97210f025">sys::term::_internal::get_query_response</a></div><div class="ttdeci">std::string get_query_response(const int &amp;timeout=256, const bool flush_output_stream=false) noexcept</div><div class="ttdoc">Receive a query response from STDIN, and return it as a string.   It is ___highly discouraged___ to c...</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_query_8hpp_source.html#l00030">TermAPIQuery.hpp:30</a></div></div>
+<div class="ttc" id="anamespacesys_1_1term_1_1__internal_html_a98af26a3e67a6497adb8756823f179b1"><div class="ttname"><a href="namespacesys_1_1term_1_1__internal.html#a98af26a3e67a6497adb8756823f179b1">sys::term::_internal::CURSOR_MIN_AXIS</a></div><div class="ttdeci">static bool CURSOR_MIN_AXIS</div><div class="ttdef"><b>Definition:</b> <a href="_cursor_origin_8h_source.html#l00004">CursorOrigin.h:4</a></div></div>
+<div class="ttc" id="anamespacesys_1_1term_html"><div class="ttname"><a href="namespacesys_1_1term.html">sys::term</a></div></div>
+<div class="ttc" id="anamespacesys_1_1term_html_a4aba5f7abf46999b265faedca76c9dbb"><div class="ttname"><a href="namespacesys_1_1term.html#a4aba5f7abf46999b265faedca76c9dbb">sys::term::ReportCursorPosition</a></div><div class="ttdeci">void ReportCursorPosition() noexcept</div><div class="ttdoc">Prints the escape sequence for DECXCPR (Report Cursor Position). Not thread-safe when multiple thread...</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_query_8hpp_source.html#l00048">TermAPIQuery.hpp:48</a></div></div>
+<div class="ttc" id="anamespacesys_1_1term_html_a77930a4d97877c68026bd2aba18c6313"><div class="ttname"><a href="namespacesys_1_1term.html#a77930a4d97877c68026bd2aba18c6313">sys::term::getDeviceAttributes</a></div><div class="ttdeci">std::string getDeviceAttributes() noexcept</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_query_8hpp_source.html#l00110">TermAPIQuery.hpp:110</a></div></div>
+<div class="ttc" id="anamespacesys_1_1term_html_a79aa414e3b82bd9738dd8c6d52aa320f"><div class="ttname"><a href="namespacesys_1_1term.html#a79aa414e3b82bd9738dd8c6d52aa320f">sys::term::getCursorPosition</a></div><div class="ttdeci">std::pair&lt; RT, RT &gt; getCursorPosition() noexcept(false)</div><div class="ttdoc">Retrieve the current position of the cursor, measured in characters of the screen buffer.</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_query_8hpp_source.html#l00059">TermAPIQuery.hpp:59</a></div></div>
+<div class="ttc" id="anamespacesys_1_1term_html_a87c48baeaefc2ae3de377b18f7d5863d"><div class="ttname"><a href="namespacesys_1_1term.html#a87c48baeaefc2ae3de377b18f7d5863d">sys::term::ReportDeviceAttributes</a></div><div class="ttdeci">void ReportDeviceAttributes() noexcept</div><div class="ttdoc">This causes the device's attributes to be emitted to STDIN.   Emits to STDIN (windows): &quot;\x1b[?...</div><div class="ttdef"><b>Definition:</b> <a href="_term_a_p_i_query_8hpp_source.html#l00104">TermAPIQuery.hpp:104</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,6 +1,7 @@
 var namespacecolor =
 [
     [ "background", "namespacecolor_1_1background.html", "namespacecolor_1_1background" ],
+    [ "file", "namespacecolor_1_1file.html", "namespacecolor_1_1file" ],
     [ "foreground", "namespacecolor_1_1foreground.html", "namespacecolor_1_1foreground" ],
     [ "ColorPalette", "classcolor_1_1_color_palette.html", "classcolor_1_1_color_palette" ],
     [ "FormatFlag", "structcolor_1_1_format_flag.html", "structcolor_1_1_format_flag" ],

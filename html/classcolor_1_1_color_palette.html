@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="termcolor.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">TermAPI
-   &#160;<span id="projectnumber">2.1.0</span>
+   &#160;<span id="projectnumber">3.0.0</span>
    </div>
    <div id="projectbrief">C++20 ANSI Escape Sequence Library</div>
   </td>
@@ -148,6 +148,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a01a544407750d5bb8f22df1a213ad9f1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structcolor_1_1setcolor.html">setcolor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1_color_palette.html#a01a544407750d5bb8f22df1a213ad9f1">reset</a> () const noexcept(false)</td></tr>
 <tr class="memdesc:a01a544407750d5bb8f22df1a213ad9f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equivalent of the <a class="el" href="namespacecolor.html#a2f1b4d7798816f568fd5fd3d35d49d47" title="Reset all formatting &amp; colors in the terminal.">color::reset</a> function when active, however when not active, this function will return a placeholder to prevent escape sequence usage.  <a href="classcolor_1_1_color_palette.html#a01a544407750d5bb8f22df1a213ad9f1">More...</a><br /></td></tr>
 <tr class="separator:a01a544407750d5bb8f22df1a213ad9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32108c63ea394b0a23f852d5ee7fbd38"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structcolor_1_1setcolor.html">setcolor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1_color_palette.html#a32108c63ea394b0a23f852d5ee7fbd38">reset</a> (const KeyType &amp;key) const noexcept(false)</td></tr>
+<tr class="memdesc:a32108c63ea394b0a23f852d5ee7fbd38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the current terminal color, then set it to a new value.  <a href="classcolor_1_1_color_palette.html#a32108c63ea394b0a23f852d5ee7fbd38">More...</a><br /></td></tr>
+<tr class="separator:a32108c63ea394b0a23f852d5ee7fbd38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3be98e28e364254c769c95e2768a631e"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structcolor_1_1setcolor.html">setcolor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcolor_1_1_color_palette.html#a3be98e28e364254c769c95e2768a631e">operator()</a> (const KeyType &amp;key) const</td></tr>
 <tr class="memdesc:a3be98e28e364254c769c95e2768a631e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the mapped color setter functor for the given key. You can use this with output stream operator&lt;&lt; as an inline console color changer.  <a href="classcolor_1_1_color_palette.html#a3be98e28e364254c769c95e2768a631e">More...</a><br /></td></tr>
 <tr class="separator:a3be98e28e364254c769c95e2768a631e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,7 +184,7 @@ struct color::ColorPalette&lt; KeyType &gt;</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00041">41</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00040">40</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a5f89810f23f0e8ce534046a4a4f6d37d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5f89810f23f0e8ce534046a4a4f6d37d">&#9670;&nbsp;</a></span>PaletteType</h2>
@@ -205,7 +208,7 @@ template&lt;typename KeyType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00042">42</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00041">41</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -263,7 +266,7 @@ template&lt;typename KeyType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00049">49</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00048">48</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -295,7 +298,7 @@ template&lt;class... VT&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00051">51</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00050">50</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -328,7 +331,7 @@ template&lt;typename KeyType &gt; </div>
 <p>Retrieve the reference of this palette's isActive boolean, allowing it to be modified. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00057">57</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00056">56</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -367,7 +370,7 @@ template&lt;typename KeyType &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00097">97</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00096">96</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -396,7 +399,7 @@ template&lt;typename KeyType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00130">130</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00137">137</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -425,7 +428,7 @@ template&lt;typename KeyType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00129">129</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00136">136</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -458,7 +461,7 @@ template&lt;typename KeyType &gt; </div>
 <p>Retrieve the mapped color setter functor for the given key. You can use this with output stream operator&lt;&lt; as an inline console color changer. </p>
 <dl class="section return"><dt>Returns</dt><dd>setcolor </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00128">128</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00135">135</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -497,7 +500,7 @@ template&lt;typename KeyType &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ColorPalette&lt;KeyType&gt;&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00076">76</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00075">75</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -536,12 +539,12 @@ template&lt;typename KeyType &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>ColorPalette&lt;KeyType&gt;&amp; </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00086">86</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00085">85</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a01a544407750d5bb8f22df1a213ad9f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01a544407750d5bb8f22df1a213ad9f1">&#9670;&nbsp;</a></span>reset()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a01a544407750d5bb8f22df1a213ad9f1">&#9670;&nbsp;</a></span>reset() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -568,7 +571,40 @@ template&lt;typename KeyType &gt; </div>
 <p>Equivalent of the <a class="el" href="namespacecolor.html#a2f1b4d7798816f568fd5fd3d35d49d47" title="Reset all formatting &amp; colors in the terminal.">color::reset</a> function when active, however when not active, this function will return a placeholder to prevent escape sequence usage. </p>
 <dl class="section return"><dt>Returns</dt><dd>setcolor </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00119">119</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00118">118</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a32108c63ea394b0a23f852d5ee7fbd38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32108c63ea394b0a23f852d5ee7fbd38">&#9670;&nbsp;</a></span>reset() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename KeyType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structcolor_1_1setcolor.html">setcolor</a> <a class="el" href="classcolor_1_1_color_palette.html">color::ColorPalette</a>&lt; KeyType &gt;::reset </td>
+          <td>(</td>
+          <td class="paramtype">const KeyType &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the current terminal color, then set it to a new value. </p>
+<dl class="section return"><dt>Returns</dt><dd>setcolor </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00126">126</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -613,7 +649,7 @@ template&lt;typename KeyType &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00108">108</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00107">107</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -652,7 +688,7 @@ template&lt;typename KeyType &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00064">64</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00063">63</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -681,7 +717,7 @@ template&lt;typename KeyType &gt; </div>
 
 <p>When false, a blank setcolor placeholder will always be returned from the <a class="el" href="classcolor_1_1_color_palette.html#a1a3f7ebbeb63d6e80920594db85f3cb9" title="Retrieve the mapped color setter functor for the given key when active, otherwise returns a placehold...">set()</a> function. This can be used to programmatically enable/disable output colors depending on need. </p>
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00044">44</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00043">43</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>
@@ -707,7 +743,7 @@ template&lt;typename KeyType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00043">43</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_color_palette_8hpp.html_source#l00042">42</a> of file <a class="el" href="_color_palette_8hpp.html_source">ColorPalette.hpp</a>.</p>
 
 </div>
 </div>

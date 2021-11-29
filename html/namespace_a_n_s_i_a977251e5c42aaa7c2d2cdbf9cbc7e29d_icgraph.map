@@ -1,5 +1,5 @@
 <map id="ANSI::make_sequence" name="ANSI::make_sequence">
-<area shape="rect" id="node1" title=" " alt="" coords="531,773,685,800"/>
+<area shape="rect" id="node1" title=" " alt="" coords="531,824,685,851"/>
 <area shape="rect" id="node2" href="$namespacesys_1_1term.html#aea24a7cda941edf0869e0a066ae1f46b" title="Clear all currently set tab stops." alt="" coords="285,5,470,32"/>
 <area shape="rect" id="node4" href="$namespacesys_1_1term.html#a184ce6f575f97f3e276d22679b4ad1fe" title="Removes tab stops from the current column, if there is one." alt="" coords="296,60,459,87"/>
 <area shape="rect" id="node6" href="$namespacesys_1_1term.html#ac9b3d465dc41e71bea03218933866ba2" title="Move the cursor backwards on the current line." alt="" coords="287,115,467,141"/>
@@ -25,12 +25,14 @@
 <area shape="rect" id="node35" href="$namespacesys_1_1term.html#a8e2f86c192b50fcee9c7338d9a68e3e9" title="Scroll the viewport up or down by a given number of lines." alt="" coords="302,1128,453,1155"/>
 <area shape="rect" id="node38" href="$namespacesys_1_1term.html#aede7564a702e358d583a91c9ece6d9a5" title="Change the active character set mapping to ASCII or DEC Line Drawing Mode. &#160;&#160;MS Docs: https://docs...." alt="" coords="288,1179,467,1205"/>
 <area shape="rect" id="node41" href="$namespacesys_1_1term.html#a16900ae3e27182fc2781e83ae771b775" title="Set whether the cursor is blinking or not." alt="" coords="292,1229,463,1256"/>
-<area shape="rect" id="node44" href="$namespacesys_1_1term.html#ac06e935eb8bbd977e0523094c9e907ab" title="Set the cursor&#39;s position to a given column and row." alt="" coords="283,1280,471,1307"/>
-<area shape="rect" id="node46" href="$namespacesys_1_1term.html#a1548bc8d65838226fd6c7e805fdb5b44" title="Set whether the cursor is visible or not." alt="" coords="287,1331,467,1357"/>
-<area shape="rect" id="node47" href="$namespacesys_1_1term.html#a8245d28a32722c19d37e8b2d46114407" title="Set the format of the screen and text as specified by the given mode." alt="" coords="272,1381,483,1408"/>
-<area shape="rect" id="node48" href="$namespacesys_1_1term.html#ae3c10a85f713b54eca7892932873fce3" title="Set the operation mode for the numberpad/cursor keys." alt="" coords="298,1432,457,1459"/>
-<area shape="rect" id="node49" href="$namespacesys_1_1term.html#ac8eba595bee4d7b95c475024ede55fb2" title="Enable or disable the alternate screen buffer." alt="" coords="289,1483,466,1509"/>
-<area shape="rect" id="node50" href="$namespacesys_1_1term.html#ae58469eae65fb1b1f890aa7d910d00e1" title="Sets a tab stop at the current cursor column, causing any applicable tab characters to align to the c..." alt="" coords="301,1533,454,1560"/>
+<area shape="rect" id="node43" href="$namespacesys_1_1term.html#ac06e935eb8bbd977e0523094c9e907ab" title="Set the cursor&#39;s position to a given column and row." alt="" coords="283,1280,471,1307"/>
+<area shape="rect" id="node44" href="$namespacesys_1_1term.html#a1548bc8d65838226fd6c7e805fdb5b44" title="Set whether the cursor is visible or not." alt="" coords="287,1331,467,1357"/>
+<area shape="rect" id="node45" href="$namespacesys_1_1term.html#a88023359594ad2b4fd141c438ae262ff" title="Set the format of the screen and text as specified by the given mode." alt="" coords="272,1381,483,1408"/>
+<area shape="rect" id="node46" href="$namespacesys_1_1term.html#ae3c10a85f713b54eca7892932873fce3" title="Set the operation mode for the numberpad/cursor keys." alt="" coords="298,1432,457,1459"/>
+<area shape="rect" id="node47" href="$namespacesys_1_1term.html#ac8eba595bee4d7b95c475024ede55fb2" title="Enable or disable the alternate screen buffer." alt="" coords="289,1483,466,1509"/>
+<area shape="rect" id="node48" href="$namespacesys_1_1term.html#ae58469eae65fb1b1f890aa7d910d00e1" title="Sets a tab stop at the current cursor column, causing any applicable tab characters to align to the c..." alt="" coords="301,1533,454,1560"/>
+<area shape="rect" id="node49" href="$namespacesys_1_1term.html#ac74c1548c9943cbb24b8001b3cadba99" title="Set the console window title to a given string." alt="" coords="291,1584,464,1611"/>
+<area shape="rect" id="node50" href="$namespacesys_1_1term.html#a3a91c586766ae125ce8d6c054e76d608" title="Sets the following terminal properties:" alt="" coords="306,1635,449,1661"/>
 <area shape="rect" id="node3" href="$namespacesys_1_1term.html#a9ddd3b8c3ba480a3cc1edae7cf2b0b1e" title="Clear all currently set tab stops." alt="" coords="22,5,207,32"/>
 <area shape="rect" id="node5" href="$namespacesys_1_1term.html#ad237f3ea2b01d98d249cabc950a9a69f" title="Removes tab stops from the current column, if there is one." alt="" coords="33,56,196,83"/>
 <area shape="rect" id="node7" href="$structsys_1_1term_1_1_cursor.html#a4d68379789f80ae8e0333d25889c78b4" title=" " alt="" coords="49,107,180,149"/>
@@ -39,14 +41,12 @@
 <area shape="rect" id="node16" href="$namespacesys_1_1term.html#a045c2114905b8cd47ae8c0f6ba329b9a" title="Move the cursor to the previous column with a tab stop. &#160;If there are no more tab stops,..." alt="" coords="14,419,215,445"/>
 <area shape="rect" id="node18" href="$namespacesys_1_1term.html#a5f37fa3891a827ef85baa868be412322" title="Move the cursor to the next column with a tab stop. &#160;If there are no more tab stops,..." alt="" coords="19,469,210,496"/>
 <area shape="rect" id="node20" href="$structsys_1_1term_1_1_cursor.html#a98765341a012e7746b21454cd9aa7694" title=" " alt="" coords="42,520,187,547"/>
-<area shape="rect" id="node30" href="$structsys_1_1term_1_1_cursor.html#ae23e59cd9629f74f1a73e42ef15fb567" title=" " alt="" coords="37,925,192,952"/>
-<area shape="rect" id="node32" href="$namespacesys_1_1term.html#a8d72fa695b0be5c2fd75217f974a8a47" title="Modify the color value of a specified color palette index." alt="" coords="14,976,215,1003"/>
-<area shape="rect" id="node34" href="$structsys_1_1term_1_1_cursor.html#a218f38fac7c22605e2a7d6c0d793f592" title=" " alt="" coords="36,1027,193,1053"/>
-<area shape="rect" id="node36" href="$namespacesys_1_1term.html#aa666a07c811cb8ebe7bb865624930d7a" title="Scroll the viewport down by inserting lines from the top." alt="" coords="39,1077,190,1104"/>
-<area shape="rect" id="node37" href="$namespacesys_1_1term.html#a8ee4da3de254002a0dbba0ae02c18299" title="Scroll the viewport up by inserting lines from the bottom." alt="" coords="47,1128,182,1155"/>
-<area shape="rect" id="node39" href="$namespacesys_1_1term.html#a0d97e75f623a8f4bdf6edd189fb541e8" title="Set the character set to DEC Line Drawing." alt="" coords="12,1179,217,1205"/>
-<area shape="rect" id="node40" href="$namespacesys_1_1term.html#a6c84bc8e31e95cb1df8448cd1a872752" title="Set the character set to ASCII." alt="" coords="5,1229,224,1256"/>
-<area shape="rect" id="node42" href="$namespacesys_1_1term.html#a5ebccd6cb4c004b7425ad8c68fd52473" title="Disables the cursor blink effect." alt="" coords="31,1281,198,1322"/>
-<area shape="rect" id="node43" href="$namespacesys_1_1term.html#af2ed209321c0708942912fc720fd2f71" title="Enables the cursor blink effect." alt="" coords="19,1347,211,1373"/>
-<area shape="rect" id="node45" href="$namespacesys_1_1term.html#ab4e84e4b833e01a8a31e474f69ebffe8" title="Set the cursor&#39;s position to a given column and row." alt="" coords="21,1397,209,1424"/>
+<area shape="rect" id="node30" href="$structsys_1_1term_1_1_cursor.html#ae23e59cd9629f74f1a73e42ef15fb567" title=" " alt="" coords="37,951,192,977"/>
+<area shape="rect" id="node32" href="$namespacesys_1_1term.html#a8d72fa695b0be5c2fd75217f974a8a47" title="Modify the color value of a specified color palette index." alt="" coords="14,1001,215,1028"/>
+<area shape="rect" id="node34" href="$structsys_1_1term_1_1_cursor.html#a218f38fac7c22605e2a7d6c0d793f592" title=" " alt="" coords="36,1052,193,1079"/>
+<area shape="rect" id="node36" href="$namespacesys_1_1term.html#aa666a07c811cb8ebe7bb865624930d7a" title="Scroll the viewport down by inserting lines from the top." alt="" coords="39,1103,190,1129"/>
+<area shape="rect" id="node37" href="$namespacesys_1_1term.html#a8ee4da3de254002a0dbba0ae02c18299" title="Scroll the viewport up by inserting lines from the bottom." alt="" coords="47,1153,182,1180"/>
+<area shape="rect" id="node39" href="$namespacesys_1_1term.html#a0d97e75f623a8f4bdf6edd189fb541e8" title="Set the character set to DEC Line Drawing." alt="" coords="12,1204,217,1231"/>
+<area shape="rect" id="node40" href="$namespacesys_1_1term.html#a6c84bc8e31e95cb1df8448cd1a872752" title="Set the character set to ASCII." alt="" coords="5,1255,224,1281"/>
+<area shape="rect" id="node42" href="$namespacesys_1_1term.html#a5ebccd6cb4c004b7425ad8c68fd52473" title="Disables the cursor blink effect." alt="" coords="31,1306,198,1347"/>
 </map>

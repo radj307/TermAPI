@@ -1,0 +1,4 @@
+<map id="sys::term::ReportDeviceAttributes" name="sys::term::ReportDeviceAttributes">
+<area shape="rect" id="node1" title="This causes the device&#39;s attributes to be emitted to STDIN. &#160;&#160;Emits to STDIN (windows): &quot;\x1b[?..." alt="" coords="5,5,223,32"/>
+<area shape="rect" id="node2" href="$namespace_a_n_s_i.html#a977251e5c42aaa7c2d2cdbf9cbc7e29d" title=" " alt="" coords="271,5,425,32"/>
+</map>

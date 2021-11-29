@@ -7,6 +7,13 @@ var annotated_dup =
       [ "background", "namespacecolor_1_1background.html", [
         [ "setcolor", "structcolor_1_1background_1_1setcolor.html", "structcolor_1_1background_1_1setcolor" ]
       ] ],
+      [ "file", "namespacecolor_1_1file.html", [
+        [ "token", "namespacecolor_1_1file_1_1token.html", [
+          [ "Token", "structcolor_1_1file_1_1token_1_1_token.html", "structcolor_1_1file_1_1token_1_1_token" ],
+          [ "SequenceTokenizer", "structcolor_1_1file_1_1token_1_1_sequence_tokenizer.html", "structcolor_1_1file_1_1token_1_1_sequence_tokenizer" ]
+        ] ],
+        [ "ColorFile", "structcolor_1_1file_1_1_color_file.html", "structcolor_1_1file_1_1_color_file" ]
+      ] ],
       [ "foreground", "namespacecolor_1_1foreground.html", [
         [ "setcolor", "structcolor_1_1foreground_1_1setcolor.html", "structcolor_1_1foreground_1_1setcolor" ]
       ] ],
@@ -20,8 +27,8 @@ var annotated_dup =
     [ "sys", "namespacesys.html", [
       [ "term", "namespacesys_1_1term.html", [
         [ "LineCharacter", "structsys_1_1term_1_1_line_character.html", "structsys_1_1term_1_1_line_character" ],
-        [ "Cursor", "structsys_1_1term_1_1_cursor.html", "structsys_1_1term_1_1_cursor" ],
-        [ "TermMessage", "structsys_1_1term_1_1_term_message.html", "structsys_1_1term_1_1_term_message" ]
+        [ "make_message", "structsys_1_1term_1_1make__message.html", "structsys_1_1term_1_1make__message" ],
+        [ "Cursor", "structsys_1_1term_1_1_cursor.html", "structsys_1_1term_1_1_cursor" ]
       ] ]
     ] ],
     [ "CharacterSet", "struct_character_set.html", null ],

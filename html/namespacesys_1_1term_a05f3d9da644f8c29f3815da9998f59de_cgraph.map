@@ -1,0 +1,4 @@
+<map id="sys::term::msg" name="sys::term::msg">
+<area shape="rect" id="node1" title="Prints &quot;[MSG]&quot; in green." alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node2" href="$namespacesys_1_1term.html#af0cab74039df5a1952faf03123f8a63e" title="Creates &amp; returns a message Sequence." alt="" coords="164,5,341,32"/>
+</map>

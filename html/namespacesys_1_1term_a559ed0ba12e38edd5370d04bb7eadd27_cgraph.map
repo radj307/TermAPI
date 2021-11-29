@@ -1,0 +1,4 @@
+<map id="sys::term::warn" name="sys::term::warn">
+<area shape="rect" id="node1" title="Prints &quot;[WARN]&quot; in orange." alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node2" href="$namespacesys_1_1term.html#af0cab74039df5a1952faf03123f8a63e" title="Creates &amp; returns a message Sequence." alt="" coords="165,5,343,32"/>
+</map>

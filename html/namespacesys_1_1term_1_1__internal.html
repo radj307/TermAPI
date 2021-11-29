@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="termcolor.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">TermAPI
-   &#160;<span id="projectnumber">2.1.0</span>
+   &#160;<span id="projectnumber">3.0.0</span>
    </div>
    <div id="projectbrief">C++20 ANSI Escape Sequence Library</div>
   </td>
@@ -104,8 +104,8 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a255133f3ddcd30806dedc04230ebbd0f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term_1_1__internal.html#a255133f3ddcd30806dedc04230ebbd0f">CURSOR_POS_MIN_ZERO</a> { false }</td></tr>
-<tr class="separator:a255133f3ddcd30806dedc04230ebbd0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98af26a3e67a6497adb8756823f179b1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacesys_1_1term_1_1__internal.html#a98af26a3e67a6497adb8756823f179b1">CURSOR_MIN_AXIS</a> { 1 }</td></tr>
+<tr class="separator:a98af26a3e67a6497adb8756823f179b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a55f1031356504dadcabf87f97210f025"></a>
@@ -152,14 +152,14 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_term_a_p_i_query_8hpp_source.html#l00028">28</a> of file <a class="el" href="_term_a_p_i_query_8hpp_source.html">TermAPIQuery.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_term_a_p_i_query_8hpp_source.html#l00030">30</a> of file <a class="el" href="_term_a_p_i_query_8hpp_source.html">TermAPIQuery.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacesys_1_1term_1_1__internal_a55f1031356504dadcabf87f97210f025_icgraph.png" border="0" usemap="#anamespacesys_1_1term_1_1__internal_a55f1031356504dadcabf87f97210f025_icgraph" alt=""/></div>
 <map name="anamespacesys_1_1term_1_1__internal_a55f1031356504dadcabf87f97210f025_icgraph" id="anamespacesys_1_1term_1_1__internal_a55f1031356504dadcabf87f97210f025_icgraph">
 <area shape="rect" title="Receive a query response from STDIN, and return it as a string. &#160;&#160;It is ___highly discouraged___ to c..." alt="" coords="429,31,576,72"/>
-<area shape="rect" href="namespacesys_1_1term.html#a4bda1565edafc07baa03d503792d15e6" title="Retrieve the current position of the cursor, measured in characters of the screen buffer." alt="" coords="189,13,377,39"/>
+<area shape="rect" href="namespacesys_1_1term.html#a79aa414e3b82bd9738dd8c6d52aa320f" title="Retrieve the current position of the cursor, measured in characters of the screen buffer." alt="" coords="189,13,377,39"/>
 <area shape="rect" href="namespacesys_1_1term.html#a77930a4d97877c68026bd2aba18c6313" title=" " alt="" coords="184,63,381,90"/>
 <area shape="rect" href="structsys_1_1term_1_1_cursor.html#a17ee1a11ba45812bfee4c2c1aed75e9b" title=" " alt="" coords="5,5,136,47"/>
 </map>
@@ -168,8 +168,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a255133f3ddcd30806dedc04230ebbd0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a255133f3ddcd30806dedc04230ebbd0f">&#9670;&nbsp;</a></span>CURSOR_POS_MIN_ZERO</h2>
+<a id="a98af26a3e67a6497adb8756823f179b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98af26a3e67a6497adb8756823f179b1">&#9670;&nbsp;</a></span>CURSOR_MIN_AXIS</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,17 +178,17 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool sys::term::_internal::CURSOR_POS_MIN_ZERO { false }</td>
+          <td class="memname">bool sys::term::_internal::CURSOR_MIN_AXIS { 1 }</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_t_e_r_m_a_p_i_8h.html_source#l00020">20</a> of file <a class="el" href="_t_e_r_m_a_p_i_8h.html_source">TERMAPI.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_cursor_origin_8h_source.html#l00004">4</a> of file <a class="el" href="_cursor_origin_8h_source.html">CursorOrigin.h</a>.</p>
 
 </div>
 </div>
