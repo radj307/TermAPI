@@ -7,7 +7,11 @@
 #include <sysarch.h>
 #include <functional>
 #include <array>
-#ifdef OS_WIN
+#include <csignal>
+#include <optional>
+
+ //#define USE_SIGNAL_API ///< TODO
+#if defined(OS_WIN) && !defined(USE_SIGNAL_API)
 #ifndef _WINDOWS_
 #include <Windows.hpp>
 #endif
@@ -27,6 +31,9 @@ namespace sys {
 		LOGOFF = 3u,		///< @brief Emitted when the user logs off while the program is running.
 		SHUTDOWN = 4u,		///< @brief Emitted when the user shuts down the system while the program is running.
 	};
+
+
+
 	using ControlEventFunctionT = std::function<void()>;
 	/**
 	 * @brief Control Event Handler
@@ -119,9 +126,9 @@ namespace sys {
 			return FALSE;
 		}
 		/**
-		 * @brief Register the event handler. This function must be called before any control events are caught.
-		 * @param add	- Passed to the SetConsoleCtrlHandler function.
-		 * @returns BOOL
+		 * @brief		Register or unregister the event handler. This function must be called before any control events are caught.
+		 * @param add	Passed to the SetConsoleCtrlHandler function.
+		 * @returns		BOOL
 		 */
 		BOOL WINAPI init(const BOOL& add = TRUE) noexcept
 		{
@@ -138,9 +145,9 @@ namespace sys {
 		return static_cast<bool>(ControlEventHandler.init());
 	}
 	/**
-	 * @brief Associate a function with a given event type.
-	 * @param ev	- Target event type
-	 * @param func	- Target function
+	 * @brief		Associate a function with a given event type.
+	 * @param ev	Target event type
+	 * @param func	Target function
 	 */
 	inline void setEventHandlerFunc(const Event& ev, const ControlEventFunctionT& func)
 	{

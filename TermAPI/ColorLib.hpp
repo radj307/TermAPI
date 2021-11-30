@@ -5,8 +5,7 @@
  *\n		This header is required by TermAPI.hpp
  */
 #pragma once
-#include <TERMAPI.h>
-// Components of the color library:
+ // Components of the color library:
 #include <ANSIDefs.h>
 #include <color-values.h>
 #include <Layer.hpp>

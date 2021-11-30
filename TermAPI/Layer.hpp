@@ -33,9 +33,9 @@ namespace color {
 	};
 
 	/** @brief Foreground/text color layer */
-	inline const Layer Layer::FOREGROUND{ SEQ_FORE };
+	inline const Layer Layer::FOREGROUND{ ANSI::FORE };
 	/** @brief Background color layer, appears "behind" text. */
-	inline const Layer Layer::BACKGROUND{ SEQ_BACK };
+	inline const Layer Layer::BACKGROUND{ ANSI::BACK };
 
 }
 #ifndef COLOR_NO_GLOBALS

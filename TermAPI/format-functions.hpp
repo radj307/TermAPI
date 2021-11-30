@@ -2,6 +2,7 @@
 #include <ANSIDefs.h>
 #include <ostream>
 namespace color {
+	using namespace ANSI;
 	/**
 	 * @function bold(std::ostream&)
 	 * @brief Sets all future characters printed to an output stream as bold using ANSI escape sequences.
@@ -10,7 +11,7 @@ namespace color {
 	 */
 	inline std::ostream& bold(std::ostream& os)
 	{
-		os << SEQ_ESC << "[1" << SEQ_END;
+		os << ESC << CSI << "1" << END;
 		return os;
 	}
 	/**
@@ -21,7 +22,7 @@ namespace color {
 	 */
 	inline std::ostream& reset_bold(std::ostream& os)
 	{
-		os << SEQ_ESC << "[22" << SEQ_END;
+		os << ESC << CSI << "22" << END;
 		return os;
 	}
 
@@ -33,7 +34,7 @@ namespace color {
 	 */
 	inline std::ostream& underline(std::ostream& os)
 	{
-		os << SEQ_ESC << "[4" << SEQ_END;
+		os << ESC << CSI << "4" << END;
 		return os;
 	}
 	/**
@@ -44,7 +45,7 @@ namespace color {
 	 */
 	inline std::ostream& reset_underline(std::ostream& os)
 	{
-		os << SEQ_ESC << "[24" << SEQ_END;
+		os << ESC << CSI << "24" << END;
 		return os;
 	}
 
@@ -56,7 +57,7 @@ namespace color {
 	 */
 	inline std::ostream& invert(std::ostream& os)
 	{
-		os << SEQ_ESC << "[7" << SEQ_END;
+		os << ESC << CSI << "7" << END;
 		return os;
 	}
 	/**
@@ -67,7 +68,7 @@ namespace color {
 	 */
 	inline std::ostream& reset_invert(std::ostream& os)
 	{
-		os << SEQ_ESC << "[27" << SEQ_END;
+		os << ESC << CSI << "27" << END;
 		return os;
 	}
 
@@ -86,8 +87,7 @@ namespace color {
 	 */
 	inline std::ostream& reset(std::ostream& os)
 	{
-		os << SEQ_ESC << SEQ_BRACKET << "0" << SEQ_END;
-		return os;
+		return os << ESC << CSI << '0' << END;
 	}
 
 }

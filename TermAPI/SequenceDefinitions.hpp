@@ -7,7 +7,11 @@
  */
 #pragma once
 #include <Sequence.hpp>
+#include <CursorOrigin.h>
 #include <TermAPIQuery.hpp>
+
+#define SEQUENCE_DEFINITIONS
+
 namespace sys::term {
 	using namespace ANSI;
 #pragma region Cursor
@@ -72,7 +76,7 @@ namespace sys::term {
 	 */
 	[[nodiscard]] inline Sequence CursorHorizontalAbs(const unsigned& column)
 	{
-		return Sequence(make_sequence(ESC, CSI, !!_internal::CURSOR_POS_MIN_ZERO + column, 'G'));
+		return Sequence(make_sequence(ESC, CSI, !!_internal::CURSOR_MIN_AXIS + column, 'G'));
 	}
 	/**
 	 * @brief			Set the cursor's vertical position to a specific row/line.
@@ -81,7 +85,7 @@ namespace sys::term {
 	 */
 	[[nodiscard]] inline Sequence CursorVerticalAbs(const unsigned& row)
 	{
-		return Sequence(make_sequence(ESC, CSI, !!_internal::CURSOR_POS_MIN_ZERO + row, 'd'));
+		return Sequence(make_sequence(ESC, CSI, !!_internal::CURSOR_MIN_AXIS + row, 'd'));
 	}
 	/**
 	 * @brief Set the cursor's position to a given column and row.
@@ -91,7 +95,7 @@ namespace sys::term {
 	 */
 	[[nodiscard]] inline Sequence setCursorPosition(const unsigned& x_column, const unsigned& y_row)
 	{
-		return Sequence(make_sequence(ESC, CSI, !!_internal::CURSOR_POS_MIN_ZERO + y_row, ';', !!_internal::CURSOR_POS_MIN_ZERO + x_column, 'H'));
+		return Sequence(make_sequence(ESC, CSI, !!_internal::CURSOR_MIN_AXIS + y_row, ';', !!_internal::CURSOR_MIN_AXIS + x_column, 'H'));
 	}
 	/**
 	 * @brief Set the cursor's position to a given column and row.
@@ -286,8 +290,8 @@ namespace sys::term {
 	 * @param mode	All possible modes: https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences#text-formatting
 	 * @returns		Sequence
 	 */
-	template<typename T> requires std::same_as<T, std::string> || std::convertible_to<T, std::string>
-	[[nodiscard]] inline Sequence SetGraphicsRendition(const T & subsequence)
+	template<var::same_or_convertible<std::string> T>
+	[[nodiscard]] inline Sequence SetGraphicsRendition(const T& subsequence)
 	{
 		return Sequence(make_sequence(ESC, CSI, subsequence, 'm'));
 	}
@@ -459,6 +463,41 @@ namespace sys::term {
 
 #pragma endregion DesignateCharacterSet
 
+#pragma region WindowTitle
+	/**
+	 * @brief		Set the console window title to a given string.
+	 * @param title	A string shorter than 254 characters. If the string is longer, it will be truncated.
+	 * @returns		Sequence
+	 */
+	[[nodiscard]] inline Sequence setWindowTitle(std::string title)
+	{
+		if (title.size() >= 255ull)
+			title = title.substr(0ull, 254ull);
+		return Sequence(make_sequence(ESC, OSC, "0;", title.c_str(), STRING_TERMINATOR));
+	}
+#pragma endregion WindowTitle
+
+#pragma region SoftReset
+	/**
+	 * @brief	Sets the following terminal properties:
+	 *			| Property				| Default Value	Applied |
+	 *			|----------:------------|-----------:-----------|
+	 *			| Cursor Visibility		| Visible				|
+	 *			| Keypad Mode			| Numeric Mode			|
+	 *			| Cursor Keys Mode		| Normal Mode			|
+	 *			| Top Margin			| 1						|
+	 *			| Bottom Margin			| Screen Buffer Height	|
+	 *			| Character Set			| US ASCII				|
+	 *			| Graphics Rendition	| Off					|
+	 *			| Saved Cursor Pos		| Origin Position		|
+	 * @returns	Sequence
+	 */
+	[[nodiscard]] inline Sequence SoftReset()
+	{
+		return Sequence(make_sequence(ESC, CSI, "!p"));
+	}
+#pragma endregion SoftReset
+
 #pragma region AlternateScreenBuffer
 	/**
 	 * @brief				Enable or disable the alternate screen buffer.
@@ -505,5 +544,9 @@ namespace sys::term {
 	[[nodiscard]] inline std::ostream& setAlternateScreenBuffer(std::ostream& os) { return os << setAlternateScreenBuffer(); }
 	/// @brief	Disable the alternate screen buffer.
 	[[nodiscard]] inline std::ostream& setMainScreenBuffer(std::ostream& os) { return os << setMainScreenBuffer(); }
+
+	/* Soft Reset */
+	/// @brief	Resets the following properties: cursor visibility, keypad mode, cursor keys mode, top margin, bottom margin, character-set, graphics rendition, and saved cursor position.
+	[[nodiscard]] inline std::ostream& SoftReset(std::ostream& os) { return os << SoftReset(); }
 #pragma endregion Wrappers_ostream
 }

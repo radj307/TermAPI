@@ -65,15 +65,85 @@ sys::term::SetCursorOrigin(1);
 __Color Library:__  
   TODO
 
-__ColorPalette__
+__ColorPalette:__  
 When using the color library, you may come across a situation where you want to be able to quickly set the same color for similar characters, and be able to disable all color sequences from being printed out in certain operation modes.  
-To accomplish this, you can use the ColorPalette object from the ColorPalette.hpp header to quickly & easily 
+To accomplish this, you can use the ColorPalette object from the ColorPalette.hpp header to quickly & easily set consistent colors, as well as disable/enable all sequences without changing your code.
+All functions from the ColorPalette object will only insert characters into STDOUT when the color palette is set as active, otherwise they simply return right away.
+
+```cpp
+#include <TermAPI.hpp>
+#include <ColorPalette.hpp>
+
+// Create something to use as a key: (enum of type char uses only 1 byte, so is very useful)
+enum class UIElement : char {
+	MESSAGE,
+	ERROR_CODE,
+	BRACKETS,
+	SOME_OTHER_ELEMENT,
+}
+
+// using UIElement as the key type:
+using PaletteType = color::ColorPalette<UIElement>;
+
+// define which colors to use for each UIElement:
+PaletteType palette{
+	std::make_pair(UIElement::MESSAGE, 				color::setcolor(color::green)),
+	std::make_pair(UIElement::ERROR_CODE, 			color::setcolor(color::intense_red)),
+	std::make_pair(UIElement::BRACKETS, 			color::setcolor(color::white, color::Layer::FOREGROUND, color::FormatFlag::BOLD | color::FormatFlag::INVERT)),
+	std::make_pair(UIElement::SOME_OTHER_ELEMENT, 	color::setcolor(color::orange)),
+};
+
+void print_message()
+{
+	std::cout 
+		<< palette.set(UIElement::MESSAGE)
+		<< "This message is green!"
+		<< palette.reset() 
+		<< std::endl;
+}
+
+int main()
+{
+#ifdef OS_WIN
+	std::cout << sys::term::EnableANSI;
+#endif
+	// Print a message with color:
+	print_message();
+	// Disable the palette & print a message without color:
+	palette.setActive(false);
+	print_message();
+	return 0;
+}
+```
 
 
 __DEC Line Drawings:__  
+```cpp
+// Enable Line Drawing Mode:
+sys::term::setCharacterSet(sys::term::CharacterSet::DEC_LINE_DRAWING)();
+// Disable Line Drawing Mode:
+sys::term::setCharacterSet(sys::term::CharacterSet::ASCII)();
+```
 TermAPI provides a helper object for drawing lines in the LineCharacter.hpp header.  
-To enable line drawing mode, use 
 
 
 __Windows Control Sequences:__  
-TermAPI also provides a method for catching Ctrl+C, Ctrl+Break, logoff, shutdown
+TermAPI also provides functions for handling Ctrl+C, Ctrl+Break, & logoff/shutdown events in the ControlEventHandler.hpp header.  
+Example:  
+```cpp
+#include <ControlEventHandler.hpp>
+
+void handle_ctrlc()
+{
+	throw std::exception("User Pressed Ctrl+C!");
+}
+
+int main()
+{
+	// Initialize the event handler & register it with the WIN32 API:
+	sys::registerEventHandler();
+	// Set the handler function for Ctrl+C:
+	sys::setEventHandlerFunc(sys::Event::CTRL_C, handle_ctrlc);
+	return 0;
+}
+```

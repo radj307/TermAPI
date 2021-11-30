@@ -19,6 +19,9 @@
     <Filter Include="color\format &amp; layer">
       <UniqueIdentifier>{4ec808cc-f400-4e77-8ea8-fe73ad4a4150}</UniqueIdentifier>
     </Filter>
+    <Filter Include="color\file integration">
+      <UniqueIdentifier>{021531f4-75af-4088-b7a1-56a45e89c190}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)TermAPI.hpp">
@@ -63,9 +66,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Layer.hpp">
       <Filter>color\format &amp; layer</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)TERMAPI.h">
-      <Filter>sys\term</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Sequence.hpp">
       <Filter>sys\term</Filter>
     </ClInclude>
@@ -73,6 +73,15 @@
       <Filter>sys\term</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)LineCharacter.hpp">
+      <Filter>sys\term</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)colorfile.hpp">
+      <Filter>color\file integration</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Message.hpp">
+      <Filter>sys\term</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CursorOrigin.h">
       <Filter>sys\term</Filter>
     </ClInclude>
   </ItemGroup>

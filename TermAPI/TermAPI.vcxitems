@@ -16,19 +16,21 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)ANSIDefs.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)color-values.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)colorfile.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ColorLib.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ColorPalette.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ControlEventHandler.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CursorOrigin.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)format-functions.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)FormatFlag.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Layer.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)LineCharacter.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Message.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Sequence.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SequenceDefinitions.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)setcolor-functions.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)setcolor.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)sysarch.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)TERMAPI.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TermAPI.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TermAPIQuery.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TermAPIWin.hpp" />

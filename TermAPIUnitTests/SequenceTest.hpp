@@ -9,7 +9,7 @@ namespace sys::term::unittests {
 			using namespace sys::term;
 			setCharacterSet(CharacterSet::DEC_LINE_DRAWING)(); // enable line drawing charset
 
-			SetCursorOrigin(0); // set cursor coordinate origin to (0,0)
+			setOriginPos(0); // set cursor coordinate origin to (0,0)
 
 			const auto& [origin_x, origin_y] {origin};
 			const auto& [size_x, size_y] {size};

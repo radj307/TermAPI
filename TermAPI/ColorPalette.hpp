@@ -27,7 +27,6 @@
  *	}
  */
 #pragma once
-#include <TERMAPI.h>
 #include <Colorlib.hpp>
 #include <unordered_map>
 
@@ -113,16 +112,24 @@ namespace color {
 		}
 
 		/**
-		 * @brief Equivalent of the color::reset function when active, however when not active, this function will return a placeholder to prevent escape sequence usage.
+		 * @brief	Equivalent of the color::reset function when active, however when not active, this function will return a placeholder to prevent escape sequence usage.
 		 * @returns setcolor
 		 */
 		virtual setcolor reset() const noexcept(false)
 		{
-			return _isActive ? setcolor{ SEQ_ESC SEQ_BRACKET "0" SEQ_END } : setcolor_placeholder;
+			return _isActive ? setcolor{ std::string(1ull, ESC) + CSI + "0" + END } : setcolor_placeholder;
+		}
+		/**
+		 * @brief	Reset the current terminal color, then set it to a new value.
+		 * @returns	setcolor
+		 */
+		virtual setcolor reset(const KeyType& key) const noexcept(false)
+		{
+			return _isActive ? setcolor{ std::string(1ull, ESC) + CSI + "0" + END + _palette.at(key).operator std::string() } : setcolor_placeholder;
 		}
 
 		/**
-		 * @brief Retrieve the mapped color setter functor for the given key. You can use this with output stream operator<< as an inline console color changer.
+		 * @brief	Retrieve the mapped color setter functor for the given key. You can use this with output stream operator<< as an inline console color changer.
 		 * @returns setcolor
 		 */
 		virtual setcolor operator()(const KeyType& key) const { return set(key); }

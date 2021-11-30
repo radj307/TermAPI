@@ -4,12 +4,11 @@
  * @brief Provides windows-only functionality to the TermAPI.hpp header-only-library, such as enabling ANSI escape sequences.
  */
 #pragma once
-#include <TERMAPI.h>
 #include <sysarch.h>
 #include <memory>
 #include <optional>
 #include <functional>
-#if defined(OS_WIN) && defined(TERMAPI) // if OS is windows and termapi has been defined
+
 #define TERMAPIWIN_HPP
 #ifndef _WINDOWS_
 #include <Windows.hpp> // for windows-specific functions
@@ -23,6 +22,7 @@ namespace sys::term {
 		inline constexpr const DWORD _STD_INPUT_HANDLE{ STD_INPUT_HANDLE }, _STD_OUTPUT_HANDLE{ STD_OUTPUT_HANDLE };
 	}
 #endif
+#ifdef OS_WIN
 	struct TargetHandle {
 		const unsigned _target;
 		constexpr TargetHandle(unsigned target) : _target{ std::move(target) } {}
@@ -123,48 +123,64 @@ namespace sys::term {
 			return false;
 		}
 	} ConsoleModeSetter;
+#endif
 	inline std::istream& EnableANSI(std::istream& is)
 	{
+	#ifdef OS_WIN
 		ConsoleModeSetter.VirtualSequences(TargetHandle::STDIN, true);
+	#endif
 		return is;
 	}
 	inline std::istream& DisableANSI(std::istream& is)
 	{
+	#ifdef OS_WIN
 		ConsoleModeSetter.VirtualSequences(TargetHandle::STDIN, false);
+	#endif
 		return is;
 	}
 	inline std::ostream& EnableANSI(std::ostream& os)
 	{
+	#ifdef OS_WIN
 		ConsoleModeSetter.VirtualSequences(
 			TargetHandle::STDOUT,
 			true
 		);
+	#endif
 		return os;
 	}
 	inline std::ostream& DisableANSI(std::ostream& os)
 	{
+	#ifdef OS_WIN
 		ConsoleModeSetter.VirtualSequences(
 			TargetHandle::STDOUT,
 			false
 		);
+	#endif
 		return os;
 	}
 	inline bool EnableANSI(const TargetHandle& target = TargetHandle::STDIN | TargetHandle::STDOUT)
 	{
+	#ifdef OS_WIN
 		return ConsoleModeSetter.VirtualSequences(
 			TargetHandle::STDIN | TargetHandle::STDOUT,
 			true
 		);
+	#else
+		return true;
+	#endif
 	}
 	inline bool DisableANSI(const TargetHandle& target = TargetHandle::STDIN | TargetHandle::STDOUT)
 	{
+	#ifdef OS_WIN
 		return ConsoleModeSetter.VirtualSequences(
 			TargetHandle::STDIN | TargetHandle::STDOUT,
 			false
 		);
+	#else
+		return true;
+	#endif
 	}
-}
-#endif
+	}
 #ifndef TERMAPI_HPP
 #include <TermAPI.hpp>
 #endif

@@ -6,14 +6,16 @@
  */
 #pragma once
 #include <ANSIDefs.h>
+#include <CursorOrigin.h>
+
 #include <str.hpp>
 #include <utility>
-#include <iostream>
 #include <thread>
 #include <conio.h>
 
 namespace sys::term {
 	using namespace std::chrono_literals;
+	using namespace ANSI;
 	/**
 	 * @namespace _internal
 	 * @brief Contains functions used internally by the sys::term namespace.
@@ -39,14 +41,13 @@ namespace sys::term {
 	}
 
 	/**
-	 * @brief Prints the escape sequence for DECXCPR (Report Cursor Position). Not thread-safe when multiple threads are printing/reading from STDOUT/STDIN.
-	 *\n	  Emits to STDIN: "ESC[<ROW>;<COLUMN>R"
+	 * @brief	Prints the escape sequence for DECXCPR (Report Cursor Position). Not thread-safe when multiple threads are printing/reading from STDOUT/STDIN.
+	 *\n		Emits "ESC[<ROW>;<COLUMN>R" to STDIN.
+	 * @returns	Sequence
 	 */
-	inline void reportCursorPosition() noexcept
+	inline void ReportCursorPosition() noexcept
 	{
-		fflush(stdin); // Flush STDIN
-		printf(SEQ_ESC SEQ_BRACKET "6n"); // Send DECXCPR - Report Cursor Position
-		fflush(stdout); // Flush STDOUT
+		std::cout << ESC << CSI << "6n";
 	}
 
 	/**
@@ -54,13 +55,14 @@ namespace sys::term {
 	 * @tparam RT	- Templated Return Type (Integral)
 	 * @returns std::pair<RT, RT>
 	 */
-	template<typename RT = unsigned short>
-	inline std::enable_if<std::is_integral<RT>::value, std::pair<RT, RT>>::type getCursorPosition() noexcept(false)
+	template<std::integral RT = unsigned short>
+	inline std::pair<RT, RT> getCursorPosition() noexcept(false)
 	{
-		reportCursorPosition();
+		ReportCursorPosition();
 		std::string row, col;
 		bool select_col{ false }; ///< @brief when true, appends digits to column; else, appends to row.
 		for (auto& c : _internal::get_query_response()) {
+			using namespace ANSI;
 			switch (c) {
 			case '0': [[fallthrough]];
 			case '1': [[fallthrough]];
@@ -80,12 +82,12 @@ namespace sys::term {
 			case ';': // delim
 				select_col = true;
 				break;
-			case INSEQ_ESC: [[fallthrough]];// ESC
-			case INSEQ_BRACKET:
+			case ESC: [[fallthrough]];// ESC
+			case CSI:
 				break;
 			case 'R': // sequence end
 				if (!row.empty() && !col.empty()) // divider delim has been reached
-					return{ static_cast<RT>(!!_internal::CURSOR_POS_MIN_ZERO + str::stoull(row)), static_cast<RT>(!!_internal::CURSOR_POS_MIN_ZERO + str::stoull(col)) };
+					return{ static_cast<RT>(!!_internal::CURSOR_MIN_AXIS + str::stoull(row)), static_cast<RT>(!!_internal::CURSOR_MIN_AXIS + str::stoull(col)) };
 				// else:
 				[[fallthrough]];
 			default:
@@ -99,14 +101,15 @@ namespace sys::term {
 	 * @brief This causes the device's attributes to be emitted to STDIN.
 	 *\n	  Emits to STDIN (windows): "\x1b[?1;0c" (Indicates "VT101 with No Options")
 	 */
-	inline void deviceAttributes() noexcept
+	inline void ReportDeviceAttributes() noexcept
 	{
-		printf(SEQ_ESC SEQ_BRACKET "0c");
+		std::cout << ESC << CSI << "0c";
 	}
+
 
 	inline std::string getDeviceAttributes() noexcept
 	{
-		deviceAttributes();
+		ReportDeviceAttributes();
 		return _internal::get_query_response();
 	}
 }

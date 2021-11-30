@@ -26,14 +26,3 @@ TEST_F(SequenceTest, Function_setCharacterSet)
 	ASSERT_EQ(setCharacterSet(CharacterSet::ASCII).operator const std::string(), make_sequence(ESC, CHARACTER_SET, 'B'));
 	ASSERT_ANY_THROW(setCharacterSet(static_cast<CharacterSet>('A')).operator const std::string());
 }
-TEST_F(SequenceTest, LineDrawing)
-{
-	using namespace streamutil;
-	BufferManager bufman;
-	bufman.begin_capture_stdout();
-
-	draw_box();
-
-	bufman.end_capture_stdout();
-	const auto str{ bufman.get_string() };
-}

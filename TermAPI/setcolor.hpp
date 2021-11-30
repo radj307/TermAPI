@@ -18,7 +18,7 @@ namespace color {
 	inline std::string makeColorSequence(const short& color, const Layer& layer)
 	{
 		std::stringstream ss;
-		ss << SEQ_ESC << SEQ_BRACKET << layer << ';' << color << SEQ_END;
+		ss << ANSI::ESC << ANSI::CSI << layer << ';' << color << ANSI::END;
 		return ss.str();
 	}
 
@@ -35,18 +35,29 @@ namespace color {
 
 	public:
 		/**
-		 * @brief Escape Sequence Constructor that automatically generates an escape sequence based on the given parameters.
-		 * @param color		 - A number within the terminal's color range.
-		 * @param foreground - When true, the foreground (text) color will be set, else changes the background color.
+		 * @brief				Constructor that automatically generates an escape sequence with the given parameters.
+		 * @param color			A number within the terminal's color range.
+		 * @param layer			Which layer to apply the color to. (FOREGROUND/BACKGROUND)
+		 * @param format		Which format flags to apply, if any. You can use the bitwise OR operator to combine multiple flags.
 		 */
-		setcolor(const short color, const Layer foreground = Layer::FOREGROUND, const FormatFlag& format = FormatFlag::NONE) : _seq{ std::move(makeColorSequence(color, foreground)) }, _format{ format } {}
+		setcolor(const short color, const Layer layer = Layer::FOREGROUND, const FormatFlag& format = FormatFlag::NONE) : _seq{ std::move(makeColorSequence(color, layer)) }, _format{ format } {}
 		/**
-		 * @brief Constructor that accepts an escape sequence string.
-		 * @param color_sequence	- The full ANSI escape sequence, stored in a string variable. This is simply inserted into whichever output stream you target.
+		 * @brief				Constructor that automatically generates an escape sequence with the given parameters, but always applies the color to the foreground.
+		 * @param color			A number within the terminal's color range. (up to 255)
+		 * @param format		Which format flags to apply, if any. You can use the bitwise OR operator to combine multiple flags.
 		 */
-		setcolor(std::string color_sequence, const FormatFlag& format = FormatFlag::NONE) : _seq{ std::move(color_sequence) }, _format{ format } {}
+		setcolor(const short color, const FormatFlag format) : _seq{ std::move(makeColorSequence(color, Layer::FOREGROUND)) }, _format{ format } {}
+		/**
+		 * @brief				Constructor that accepts an escape sequence string.
+		 * @param color_seq		The full ANSI escape sequence, stored in a string variable. This is simply inserted into whichever output stream you target.
+		 * @param format		Which format flags to apply, if any. You can use the bitwise OR operator to combine multiple flags.
+		 */
+		setcolor(std::string color_seq, const FormatFlag& format = FormatFlag::NONE) : _seq{ std::move(color_seq) }, _format{ format } {}
 
-		// Allow conversion to string
+		/**
+		 * @brief		Retrieve the escape sequence as a string.
+		 * @returns		std::string
+		 */
 		operator std::string() const { return _seq; }
 
 		/**

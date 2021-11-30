@@ -4,27 +4,32 @@
  * @brief This header-only library contains cross-platform ANSI escape sequence helper functions designed to be used with iostreams
  */
 #pragma once
-#include <TERMAPI.h>
+#ifdef TERMAPI_ENABLE_OLD_FUNCTIONS
+#define ENABLE_PREPROC
+#endif
+
 #include <sysarch.h>	///< @brief Architecture / C++ version detection
 #include <ColorLib.hpp>	///< @brief Terminal Color Library
-#include <TermAPIQuery.hpp> // For sequences that require reading from STDIN, without blocking for input.
 
 #if CPP < 20
 #warning TermAPI.hpp Requires at least C++20
-#endif
+#else
 
 #ifdef OS_WIN
 #include <TermAPIWin.hpp> // Windows-Specific functionality, like enabling/disabling ANSI virtual sequence handling.
 #endif
 
-/// STL
+ /// STL
 #include <iostream>
 #include <iomanip>
 #include <sstream>
 
 #ifndef TERMAPI_ENABLE_OLD_FUNCTIONS
+
 #include <SequenceDefinitions.hpp>
+#include <Message.hpp>
 #else
+
 namespace sys::term {
 #pragma region CursorPositioning
 	/// @brief Moves the cursor up by _n_ character positions.
@@ -67,9 +72,6 @@ namespace sys::term {
 	{
 		printf(SEQ_ESC SEQ_BRACKET "%ud", n);
 	}
-
-
-
 	inline void cursorSavePos()
 	{
 		printf(SEQ_ESC "7");
@@ -353,24 +355,25 @@ namespace sys::term {
 	{
 		std::cout << color::reset;
 	}
-}
-#endif
-namespace sys::term {
 	struct TermMessage {
 	protected:
-		std::string _message;
-		short _color;
-		std::streamsize _indent;
+		const std::string _message;
+		const short _color;
+		const std::streamsize _indent;
 
 	public:
-		TermMessage(std::string message, short color, std::streamsize indent = 8) : _message{ std::move(message) }, _color{ std::move(color) }, _indent{ std::move(indent) } {}
+		constexpr TermMessage(const std::string& message, const short& color, const std::streamsize& indent = 8ull) : _message{ message }, _color{ color }, _indent{ indent } {}
 
 		friend std::ostream& operator<<(std::ostream& os, const TermMessage& obj)
 		{
-			os << color::setcolor(obj._color) << obj._message << color::reset << std::setw(std::abs(static_cast<std::streamsize>(obj._indent + 1 - obj._message.size()))) << ' ';
-			return os;
+			return os << color::setcolor(obj._color) << obj._message << color::reset << str::VIndent(obj._indent + 1ull, obj._message.size());
 		}
 	};
+
+	inline Sequence error()
+	{
+		return Sequence(make_sequence(color::makeColorSequence(color::intense_red, Layer::FOREGROUND), "[ERROR]", color::reset));
+	}
 
 	/// @brief Prints "[ERROR]" in intense_red
 	inline std::ostream& error(std::ostream& os)
@@ -403,3 +406,5 @@ namespace sys::term {
 		return os;
 	}
 }
+#endif
+#endif
