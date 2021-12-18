@@ -9,7 +9,10 @@ if (MSVC)
 	string(APPEND CMAKE_CXX_FLAGS " /Zc:__cplusplus")
 endif()
 
-project("TermAPI")
+find_package(307lib::shared REQUIRED)
+find_package(307lib::str-lib REQUIRED)
+
+project("TermAPI" VERSION 3.0.0)
 
 set(HEADERS
 	"./include/ANSIDefs.h"
@@ -47,9 +50,8 @@ set(SRC
 )
 
 add_library(TermAPI STATIC ${HEADERS} ${SRC})
-add_library(307lib::TermAPI ALIAS TermAPI)
 
-target_link_libraries(TermAPI PUBLIC shared str-lib)
+target_link_libraries(TermAPI PUBLIC 307lib::shared 307lib::str-lib)
 
 target_include_directories(TermAPI PUBLIC 
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
@@ -59,4 +61,13 @@ target_link_directories(TermAPI PUBLIC
 	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>"
 	"$<INSTALL_INTERFACE:src>"
 )
+
+# Packaging
+include(GenerateExportHeader)
+generate_export_header(TermAPI EXPORT_FILE_NAME "${CMAKE_CURRENT_SOURCE_DIR}/export.h")
+
+# Include packaging by default if this is the top-level directory
+if (307lib_ENABLE_PACKAGING)
+	add_subdirectory("packaging")
+endif()
 
